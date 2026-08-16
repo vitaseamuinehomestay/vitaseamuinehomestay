@@ -74,6 +74,7 @@ const translations = {
       "Phòng gia đình lớn với 4 giường đôi ở được 8 người và tầm nhìn hồ bơi.",
 
     perNight: "/ đêm",
+    from: "Giá chỉ từ",
     bookNow: "Facebook",
 
     amenitiesEyebrow: "TẬN HƯỞNG KỲ NGHỈ",
@@ -195,6 +196,7 @@ const translations = {
       "Large family room with 4 double beds for 8 guests and a pool view.",
 
     perNight: "/ night",
+    from: "From",
     bookNow: "Facebook",
 
     amenitiesEyebrow: "ENJOY YOUR STAY",
@@ -273,6 +275,7 @@ const rooms = [
       "🌿 Garden View"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room1Description",
     description:
       "Comfortable room with a beautiful view of the garden.",
@@ -296,6 +299,7 @@ const rooms = [
       "🍳 Kitchenette"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room2Description",
     description:
       "A double room with a private kitchenette for 2 people.",
@@ -318,6 +322,7 @@ const rooms = [
       "🛋 Sofa"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room3Description",
     description:
       "A double room with a comfortable sofa for 2 guests.",
@@ -339,6 +344,7 @@ const rooms = [
       "Living Room"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room4Description",
     description:
       "A double room with separated living room and bedroom for 2 guests.",
@@ -360,6 +366,7 @@ const rooms = [
       "Living Room"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room5Description",
     description:
       "Family room with separated living room and bedroom for 4 guests.",
@@ -380,6 +387,7 @@ const rooms = [
       "👤 4 Guests",
       "Living Room"
     ],
+    from: "from",
     perNight:"perNight",
     descriptionKey: "room6Description",
     description:
@@ -402,6 +410,7 @@ const rooms = [
       "👤 4 Guests",
       "🏊 Pool View"
     ],
+    from: "from",
     perNight:"perNight",
     descriptionKey: "room7Description",
     description:
@@ -424,6 +433,7 @@ const rooms = [
       "🏊 Pool View"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room8Description",
     description:
       "Family room with three double beds for up to six guests.",
@@ -446,6 +456,7 @@ const rooms = [
       "🏊 Pool View"
     ],
     perNight:"perNight",
+    from: "from",
     descriptionKey: "room9Description",
     description:
       "Family room with four double beds for up to eight guests.",
@@ -503,7 +514,7 @@ function renderRooms() {
           <div class="price">
 
             <strong>
-              ${translations[savedLanguage].from} ${room.price}
+              <span data-i18n="${room.from}">${translations[savedLanguage][room.from]}</span> ${room.price}
             </strong>
 
             <small data-i18n="${room.perNight}">
