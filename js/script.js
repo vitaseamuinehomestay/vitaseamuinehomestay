@@ -514,7 +514,7 @@ function renderRooms() {
           <div class="price">
 
             <strong>
-              <span data-i18n="${room.from}">${translations[savedLanguage][room.from]}</span> ${room.price}
+              <span data-i18n="${room.from}">From</span> ${room.price}
             </strong>
 
             <small data-i18n="${room.perNight}">
