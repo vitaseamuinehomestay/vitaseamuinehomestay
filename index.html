@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VitaSea Mui Ne Homestay & Pool</title>
+  <meta
+    name="description"
+    content="VitaSea Mui Ne Homestay & Pool – A relaxing stay in Mui Ne, Vietnam."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      <span>VitaSea</span>
+      <small>Mui Ne Homestay & Pool</small>
+    </a>
+
+    <nav class="menu">
+      <a href="#rooms" data-i18n="navRooms">Rooms</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+
+    <div class="language-switch">
+
+        <button
+            onclick="setLanguage('vi')"
+            id="viBtn"
+            aria-label="Tiếng Việt"
+            title="Tiếng Việt"
+        >
+            <img
+            src="https://flagcdn.com/w40/vn.png"
+            alt="Vietnamese"
+            >
+        </button>
+
+        <button
+            onclick="setLanguage('en')"
+            id="enBtn"
+            aria-label="English"
+            title="English"
+        >
+            <img
+            src="https://flagcdn.com/w40/gb.png"
+            alt="English"
+            >
+        </button>
+
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <p class="eyebrow" data-i18n="heroEyebrow">
+      MUI NE · VIETNAM
+    </p>
+
+    <h1 data-i18n="heroTitle">
+      Your peaceful stay near the sea with pool
+    </h1>
+
+    <p class="hero-description" data-i18n="heroDescription">
+      Relax, swim and enjoy the peaceful atmosphere of Mui Ne.
+    </p>
+
+    <!-- SEARCH BOX -->
+
+    <div class="availability-box">
+
+      <div class="field">
+        <label data-i18n="checkIn">Check-in</label>
+        <input type="date" id="checkIn">
+      </div>
+
+      <div class="field">
+        <label data-i18n="checkOut">Check-out</label>
+        <input type="date" id="checkOut">
+      </div>
+
+      <div class="field">
+        <label data-i18n="guests">Guests</label>
+
+        <select id="guests">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+
+      <button
+        class="availability-btn"
+        onclick="checkAvailability()"
+        data-i18n="checkAvailability"
+      >
+        Check Availability
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section" id="about">
+
+  <!-- Background Image -->
+  <div class="about-image">
+    <img
+      src="images/common/anh_bia.jpg"
+      alt="VitaSea Mui Ne Homestay & Pool"
+    >
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="about-content">
+
+    <p
+      class="eyebrow"
+      data-i18n="aboutEyebrow"
+    >
+      WELCOME TO VITASEA
+    </p>
+
+    <h2 data-i18n="aboutTitle">
+      A peaceful place in Mui Ne
+    </h2>
+
+    <p data-i18n="aboutText">
+      VitaSea Mui Ne Homestay & Pool is a cozy place to relax
+      and enjoy your holiday in Mui Ne. Our property offers
+      comfortable rooms, a swimming pool and a peaceful atmosphere.
+    </p>
+
+    <a
+      href="#rooms"
+      class="primary-btn"
+      data-i18n="viewRooms"
+    >
+      View Rooms
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ROOMS ================= -->
+
+<section class="rooms-section" id="rooms">
+
+  <div class="section-heading">
+
+    <p class="eyebrow" data-i18n="roomsEyebrow">
+      STAY WITH US
+    </p>
+
+    <h2 data-i18n="roomsTitle">
+      Our Rooms
+    </h2>
+
+    <p data-i18n="roomsDescription">
+      Choose your perfect room for a relaxing stay in Mui Ne.
+    </p>
+
+  </div>
+
+  <!-- JavaScript sẽ tự tạo các room card ở đây -->
+  <div class="rooms-grid" id="roomsGrid">
+
+  </div>
+
+</section>
+
+  </div>
+
+</section>
+
+<!-- ================= AMENITIES ================= -->
+
+<section class="amenities-section" id="amenities">
+
+  <div class="section-heading">
+
+    <p class="eyebrow" data-i18n="amenitiesEyebrow">
+      ENJOY YOUR STAY
+    </p>
+
+    <h2 data-i18n="amenitiesTitle">
+      Amenities
+    </h2>
+
+    <p data-i18n="amenitiesDescription">
+      Everything you need for a relaxing and enjoyable stay in Mui Ne.
+    </p>
+
+  </div>
+
+
+  <div class="amenities-grid">
+
+    <!-- Swimming Pool -->
+    <article class="amenity-card">
+
+      <div class="amenity-icon">
+        🏊
+      </div>
+
+      <h3 data-i18n="amenityPoolTitle">
+        Swimming Pool
+      </h3>
+
+      <p data-i18n="amenityPoolText">
+        Take a refreshing swim and relax by the pool in a peaceful atmosphere.
+      </p>
+
+    </article>
+
+
+    <!-- Shared Kitchen -->
+    <article class="amenity-card">
+
+      <div class="amenity-icon">
+        🍳
+      </div>
+
+      <h3 data-i18n="amenityKitchenTitle">
+        Shared Kitchen
+      </h3>
+
+      <p data-i18n="amenityKitchenText">
+        A convenient shared kitchen where you can prepare your favorite meals.
+      </p>
+
+    </article>
+
+
+    <!-- BBQ & Dining -->
+    <article class="amenity-card">
+
+      <div class="amenity-icon">
+        🔥
+      </div>
+
+      <h3 data-i18n="amenityBBQTitle">
+        BBQ & Dining Area
+      </h3>
+
+      <p data-i18n="amenityBBQText">
+        Enjoy a fun BBQ evening and memorable meals with friends and family.
+      </p>
+
+    </article>
+
+
+    <!-- Rooftop -->
+    <article class="amenity-card">
+
+      <div class="amenity-icon">
+        🌴
+      </div>
+
+      <h3 data-i18n="amenityRooftopTitle">
+        Chill Rooftop
+      </h3>
+
+      <p data-i18n="amenityRooftopText">
+        Unwind on our rooftop, enjoy the breeze and soak up the relaxed Mui Ne vibe.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services-section" id="services">
+
+  <div class="section-heading">
+
+    <p class="eyebrow" data-i18n="servicesEyebrow">
+      MORE FOR YOUR STAY
+    </p>
+
+    <h2 data-i18n="servicesTitle">
+      Services
+    </h2>
+
+    <p data-i18n="servicesDescription">
+      Let us help you make your stay in Mui Ne easier and more enjoyable.
+    </p>
+
+  </div>
+
+
+  <div class="services-grid">
+
+    <!-- JEEP TOUR -->
+    <article class="service-card">
+
+      <div class="service-icon">
+        🚙
+      </div>
+
+      <div class="service-content">
+
+        <h3 data-i18n="jeepTourTitle">
+          Jeep Tour
+        </h3>
+
+        <p data-i18n="jeepTourText">
+          Join a shared Jeep tour or arrange a private Jeep for your own schedule.
+        </p>
+
+        <div class="service-price">
+          <strong>200,000 – 600,000₫</strong>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- MOTORBIKE -->
+    <article class="service-card">
+
+      <div class="service-icon">
+        🛵
+      </div>
+
+      <div class="service-content">
+
+        <h3 data-i18n="motorbikeTitle">
+          Motorbike Rental
+        </h3>
+
+        <p data-i18n="motorbikeText">
+          Rent a scooter and explore Mui Ne and the surrounding area at your own pace.
+        </p>
+
+        <div class="service-price">
+          <strong>150,000₫ / day</strong>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- BUS TICKET -->
+    <article class="service-card">
+
+      <div class="service-icon">
+        🎫
+      </div>
+
+      <div class="service-content">
+
+        <h3 data-i18n="busTicketTitle">
+          Bus Ticket Assistance
+        </h3>
+
+        <p data-i18n="busTicketText">
+          We can help arrange bus tickets for your next destination.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- AIRPORT TRANSFER -->
+    <article class="service-card">
+
+      <div class="service-icon">
+        🚐
+      </div>
+
+      <div class="service-content">
+
+        <h3 data-i18n="airportTransferTitle">
+          Private Airport Transfer
+        </h3>
+
+        <p data-i18n="airportTransferText">
+          Private car transfer service to and from the airport.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- KARAOKE SPEAKER -->
+    <article class="service-card">
+
+      <div class="service-icon">
+        🎤
+      </div>
+
+      <div class="service-content">
+
+        <h3 data-i18n="speakerRentalTitle">
+          Portable Karaoke Speaker
+        </h3>
+
+        <p data-i18n="speakerRentalText">
+          Enjoy music and karaoke with friends and family during your evening.
+        </p>
+
+        <div class="service-price">
+          <strong>300,000₫ / evening</strong>
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
+
+  <div class="section-heading">
+
+    <p class="eyebrow" data-i18n="contactEyebrow">
+      GET IN TOUCH
+    </p>
+
+    <h2 data-i18n="contactTitle">
+      Contact VitaSea
+    </h2>
+
+  </div>
+
+
+  <div class="contact-grid">
+
+    <a href="tel:+84378874148" class="contact-item">
+      <span>
+        <i class="fa-solid fa-phone-volume"></i>
+      </span>
+      <div>
+        <strong data-i18n="phone">Phone</strong>
+        <p>+84 378 874 148</p>
+      </div>
+    </a>
+
+    <a href="mailto:vitaseamuinehomestay@gmail.com" class="contact-item">
+      <span>
+        <i class="fa-solid fa-envelope"></i>
+    </span>
+      <div>
+        <strong>Email</strong>
+        <p>vitaseamuinehomestay@gmail.com</p>
+      </div>
+    </a>
+
+    <a
+        href="https://facebook.com/vitaseamuinehomestay"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item"
+        >
+        <span class="facebook-icon">
+            <i class="fa-brands fa-facebook"></i>
+        </span>
+
+        <div>
+            <strong>Facebook</strong>
+
+            <p>VitaSea Mui Ne</p>
+        </div>
+    </a>
+
+    <a href="https://maps.app.goo.gl/sZPmvFvbSwWkSoLE9" target="_blank" 
+     rel="noopener noreferrer" 
+     class="contact-item">
+        <span>
+          <i class="fa-solid fa-location-dot"></i>
+        </span>
+        <div>
+        <strong data-i18n="address">Address</strong>
+        <p data-i18n="addressDetails">
+          149 Nguyễn Đình Chiểu,<br>
+          khu phố Hàm Tiến 1, Phường Mũi Né,<br>
+          Thành phố Phan Thiết, Bình Thuận, Việt Nam
+        </p>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div>
+      <h3>VitaSea</h3>
+
+      <p>
+        VitaSea Mui Ne Homestay & Pool
+      </p>
+    </div>
+
+
+    <div class="visitor-counter">
+
+      <span class="eye-icon">
+        <i class="fa-solid fa-eye"></i>
+      </span>
+
+      <div>
+        <strong id="visitorCount">0</strong>
+        <small data-i18n="visitors">
+          visitors
+        </small>
+      </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="tel:+84378874148">
+        <i class="fa-solid fa-phone-volume"></i>
+         +84 378 874 148
+      </a>
+
+      <a href="mailto:vitaseamuinehomestay@gmail.com">
+        <i class="fa-regular fa-envelope"></i>
+        vitaseamuinehomestay@gmail.com
+      </a>
+
+      <a
+        href="https://facebook.com/vitaseamuinehomestay"
+        target="_blank"
+      >
+        <i class="fa-brands fa-facebook"></i>
+        Facebook
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © <span id="year"></span>
+    VitaSea Mui Ne Homestay & Pool.
+    <span data-i18n="allRights">
+      All rights reserved.
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
