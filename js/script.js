@@ -503,7 +503,7 @@ function renderRooms() {
           <div class="price">
 
             <strong>
-              From ${room.price}
+              ${translations[savedLanguage].from} ${room.price}
             </strong>
 
             <small data-i18n="${room.perNight}">

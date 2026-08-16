@@ -318,6 +318,28 @@ button {
   z-index: 0;
 }
 
+.hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 600;
+
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+
+  max-width: 850px;
+
+  margin: 0 0 22px;
+
+  /* Quan trọng với tiếng Việt */
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+
+  /* Không cho browser kéo giãn khoảng cách */
+  text-align: left;
+}
+
 
 /* =========================================================
    HEADER
