@@ -17,108 +17,175 @@
   rel="stylesheet"
 >
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-  <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-<!-- ================= HEADER ================= -->
-
-<header class="header">
-  <div class="container nav">
-
-    <a href="#" class="logo">
-      <span>VitaSea</span>
-      <small>Mui Ne Homestay & Pool</small>
-    </a>
-
-    <nav class="menu">
-      <a href="#rooms" data-i18n="navRooms">Rooms</a>
-      <a href="#about" data-i18n="navAbout">About</a>
-      <a href="#contact" data-i18n="navContact">Contact</a>
-    </nav>
-
-    <div class="language-switch">
-
-        <button
-            onclick="setLanguage('vi')"
-            id="viBtn"
-            aria-label="Tiếng Việt"
-            title="Tiếng Việt"
-        >
-            <img
-            src="https://flagcdn.com/w40/vn.png"
-            alt="Vietnamese"
-            >
-        </button>
-
-        <button
-            onclick="setLanguage('en')"
-            id="enBtn"
-            aria-label="English"
-            title="English"
-        >
-            <img
-            src="https://flagcdn.com/w40/gb.png"
-            alt="English"
-            >
-        </button>
-
-    </div>
-
-  </div>
-</header>
-
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
+  <!-- Background image -->
+  <div class="hero-background"></div>
+
+  <!-- Dark overlay -->
   <div class="hero-overlay"></div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        <span>VitaSea</span>
+        <small>Mui Ne Homestay & Pool</small>
+      </a>
+
+
+      <nav class="menu">
+
+        <a href="#rooms" data-i18n="navRooms">
+          Rooms
+        </a>
+
+        <a href="#collections" data-i18n="navCollections">
+          Collections
+        </a>
+
+        <a href="#contact" data-i18n="navContact">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <!-- LANGUAGE -->
+
+      <div class="language-switch">
+
+        <button
+          onclick="setLanguage('vi')"
+          id="viBtn"
+          aria-label="Tiếng Việt"
+          title="Tiếng Việt"
+        >
+          <img
+            src="https://flagcdn.com/w40/vn.png"
+            alt="Vietnamese"
+          >
+        </button>
+
+
+        <button
+          onclick="setLanguage('en')"
+          id="enBtn"
+          aria-label="English"
+          title="English"
+        >
+          <img
+            src="https://flagcdn.com/w40/gb.png"
+            alt="English"
+          >
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= HERO CONTENT ================= -->
 
   <div class="hero-content">
 
-    <p class="eyebrow" data-i18n="heroEyebrow">
+    <p
+      class="eyebrow"
+      data-i18n="heroEyebrow"
+    >
       MUI NE · VIETNAM
     </p>
+
 
     <h1 data-i18n="heroTitle">
       Your peaceful stay near the sea with pool
     </h1>
 
-    <p class="hero-description" data-i18n="heroDescription">
+
+    <p
+      class="hero-description"
+      data-i18n="heroDescription"
+    >
       Relax, swim and enjoy the peaceful atmosphere of Mui Ne.
     </p>
 
-    <!-- SEARCH BOX -->
+
+    <!-- ================= AVAILABILITY ================= -->
 
     <div class="availability-box">
 
       <div class="field">
-        <label data-i18n="checkIn">Check-in</label>
-        <input type="date" id="checkIn">
+
+        <label data-i18n="checkIn">
+          Check-in
+        </label>
+
+        <input
+          type="date"
+          id="checkIn"
+        >
+
       </div>
 
-      <div class="field">
-        <label data-i18n="checkOut">Check-out</label>
-        <input type="date" id="checkOut">
-      </div>
 
       <div class="field">
-        <label data-i18n="guests">Guests</label>
+
+        <label data-i18n="checkOut">
+          Check-out
+        </label>
+
+        <input
+          type="date"
+          id="checkOut"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label data-i18n="guests">
+          Guests
+        </label>
 
         <select id="guests">
+
           <option value="1">1</option>
-          <option value="2" selected>2</option>
+
+          <option value="2" selected>
+            2
+          </option>
+
           <option value="3">3</option>
+
           <option value="4">4</option>
+
           <option value="5">5</option>
+
           <option value="6">6</option>
+
           <option value="7">7</option>
+
           <option value="8">8</option>
+
         </select>
+
       </div>
+
 
       <button
         class="availability-btn"
@@ -133,49 +200,291 @@
   </div>
 
 </section>
-<!-- ================= ABOUT ================= -->
 
-<section class="about-section" id="about">
 
-  <!-- Background Image -->
-  <div class="about-image">
-    <img
-      src="images/common/anh_bia.jpg"
-      alt="VitaSea Mui Ne Homestay & Pool"
-    >
-  </div>
+<!-- ================= COLLECTIONS ================= -->
 
-  <!-- Content Overlay -->
-  <div class="about-content">
+<section
+  class="collections-section"
+  id="collections"
+>
+
+  <div class="section-heading">
 
     <p
       class="eyebrow"
-      data-i18n="aboutEyebrow"
+      data-i18n="collectionsEyebrow"
     >
-      WELCOME TO VITASEA
+      OUR COLLECTIONS
     </p>
 
-    <h2 data-i18n="aboutTitle">
-      A peaceful place in Mui Ne
+
+    <h2 data-i18n="collectionsTitle">
+      Moments around VitaSea
     </h2>
 
-    <p data-i18n="aboutText">
-      VitaSea Mui Ne Homestay & Pool is a cozy place to relax
-      and enjoy your holiday in Mui Ne. Our property offers
-      comfortable rooms, a swimming pool and a peaceful atmosphere.
+
+    <p
+      class="section-description"
+      data-i18n="collectionsText"
+    >
+      A glimpse of the peaceful moments, nature and memories
+      created at VitaSea.
     </p>
 
-    <a
-      href="#rooms"
-      class="primary-btn"
-      data-i18n="viewRooms"
+  </div>
+
+
+  <!-- ================= GALLERY ================= -->
+
+  <div class="gallery">
+
+    <!-- 01 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(0)"
     >
-      View Rooms
-    </a>
+
+      <img
+        src="images/collections/collection_01.jpg"
+        alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 02 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(1)"
+    >
+
+      <img
+        src="images/collections/collection_02.jpg"
+         alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 03 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(2)"
+    >
+
+      <img
+        src="images/collections/collection_03.jpg"
+        alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 04 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(3)"
+    >
+
+      <img
+        src="images/collections/collection_04.jpg"
+         alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 05 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(4)"
+    >
+
+      <img
+        src="images/collections/collection_05.jpg"
+         alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 06 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(5)"
+    >
+
+      <img
+        src="images/collections/collection_06.jpg"
+         alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 07 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(6)"
+    >
+
+      <img
+        src="images/collections/collection_07.jpg"
+         alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 08 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(7)"
+    >
+
+      <img
+        src="images/collections/collection_08.jpg"
+        alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 09 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(8)"
+    >
+
+      <img
+        src="images/collections/collection_09.jpg"
+         alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
+
+
+    <!-- 10 -->
+
+    <div
+      class="gallery-item"
+      onclick="openLightbox(9)"
+    >
+
+      <img
+        src="images/collections/collection_10.jpg"
+        alt="Vitasea Mui Ne Homestay & Pool"
+      >
+
+      <div class="gallery-overlay">
+        <span>View photo</span>
+      </div>
+
+    </div>
 
   </div>
 
 </section>
+
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+>
+
+  <button
+    class="lightbox-close"
+    onclick="closeLightbox()"
+    aria-label="Close"
+  >
+    ×
+  </button>
+
+
+  <button
+    class="lightbox-prev"
+    onclick="changeImage(-1)"
+    aria-label="Previous image"
+  >
+    ‹
+  </button>
+
+
+  <div class="lightbox-content">
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt=""
+    >
+
+    <div
+      class="lightbox-counter"
+      id="lightboxCounter"
+    >
+      1 / 10
+    </div>
+
+  </div>
+
+
+  <button
+    class="lightbox-next"
+    onclick="changeImage(1)"
+    aria-label="Next image"
+  >
+    ›
+  </button>
+
+</div>
 
 
 <!-- ================= ROOMS ================= -->

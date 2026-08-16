@@ -23,7 +23,7 @@ const translations = {
   vi: {
 
     navRooms: "Phòng",
-    navAbout: "Giới thiệu",
+    navCollections: "Khoảnh khắc",
     navContact: "Liên hệ",
 
     heroEyebrow: "MŨI NÉ · VIỆT NAM",
@@ -116,10 +116,10 @@ const translations = {
     servicesCta: "Cần hỗ trợ đặt dịch vụ?",
     contactUs: "Liên hệ ngay",
 
-    aboutEyebrow: "CHÀO MỪNG ĐẾN VITASEA",
-    aboutTitle: "Một nơi bình yên tại Mũi Né",
-    aboutText:
-      "VitaSea Mui Ne Homestay & Pool là nơi lý tưởng để nghỉ ngơi và tận hưởng kỳ nghỉ tại Mũi Né. Chúng tôi mang đến những căn phòng thoải mái, hồ bơi và không gian yên bình.",
+    collectionsEyebrow: "KHOẢNH KHẮC",
+    collectionsTitle: "Khoảnh khắc tại VitaSea",
+    collectionsText:
+      "Khám phá những khoảnh khắc đáng nhớ tại VitaSea Mui Ne Homestay & Pool.",
 
     viewRooms: "Xem phòng",
 
@@ -139,7 +139,7 @@ const translations = {
   en: {
 
     navRooms: "Rooms",
-    navAbout: "About",
+    navCollections: "Collections",
     navContact: "Contact",
 
     heroEyebrow: "MUI NE · VIETNAM",
@@ -151,6 +151,11 @@ const translations = {
     checkOut: "Check-out",
     guests: "Guests",
     checkAvailability: "Check Availability",
+
+    collectionsEyebrow: "COLLECTIONS",
+    collectionsTitle: "Moments around VitaSea",
+    collectionsText:
+      "A glimpse of the peaceful moments, nature and memories created at VitaSea homestay & pool in Mui Ne.",
 
     roomsEyebrow: "STAY WITH US",
     roomsTitle: "Our Rooms",
@@ -267,7 +272,7 @@ const rooms = [
       "👤 2 Guests",
       "🌿 Garden View"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room1Description",
     description:
       "Comfortable room with a beautiful view of the garden.",
@@ -290,7 +295,7 @@ const rooms = [
       "👤 2 Guests",
       "🍳 Kitchenette"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room2Description",
     description:
       "A double room with a private kitchenette for 2 people.",
@@ -312,7 +317,7 @@ const rooms = [
       "👤 2 Guests",
       "🛋 Sofa"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room3Description",
     description:
       "A double room with a comfortable sofa for 2 guests.",
@@ -333,7 +338,7 @@ const rooms = [
       "👤 2 Guests",
       "Living Room"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room4Description",
     description:
       "A double room with separated living room and bedroom for 2 guests.",
@@ -354,7 +359,7 @@ const rooms = [
       "👤 4 Guests",
       "Living Room"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room5Description",
     description:
       "Family room with separated living room and bedroom for 4 guests.",
@@ -375,7 +380,7 @@ const rooms = [
       "👤 4 Guests",
       "Living Room"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room6Description",
     description:
       "Family room with separated living room and bedroom for 4 guests.",
@@ -397,7 +402,7 @@ const rooms = [
       "👤 4 Guests",
       "🏊 Pool View"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room7Description",
     description:
       "Family house with separated living room and bedroom for 4 guests and pool view.",
@@ -418,7 +423,7 @@ const rooms = [
       "👤 6 Guests",
       "🏊 Pool View"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room8Description",
     description:
       "Family room with three double beds for up to six guests.",
@@ -440,7 +445,7 @@ const rooms = [
       "👤 8 Guests",
       "🏊 Pool View"
     ],
-
+    perNight:"perNight",
     descriptionKey: "room9Description",
     description:
       "Family room with four double beds for up to eight guests.",
@@ -501,8 +506,8 @@ function renderRooms() {
               From ${room.price}
             </strong>
 
-            <small data-i18n="perNight">
-              / night
+            <small data-i18n="${room.perNight}">
+              ${translations[savedLanguage][room.perNight]}
             </small>
 
           </div>
@@ -625,6 +630,205 @@ document.getElementById("checkIn")
 
   });
 
+  /* =========================================================
+   VITASEA COLLECTIONS LIGHTBOX
+========================================================= */
+
+
+/* IMAGE LIST */
+
+const galleryImages = [
+
+  "images/collections/collection_01.jpg",
+
+  "images/collections/collection_02.jpg",
+
+  "images/collections/collection_03.jpg",
+
+  "images/collections/collection_04.jpg",
+
+  "images/collections/collection_05.jpg",
+
+  "images/collections/collection_06.jpg",
+
+  "images/collections/collection_07.jpg",
+
+  "images/collections/collection_08.jpg",
+
+  "images/collections/collection_09.jpg",
+
+  "images/collections/collection_10.jpg"
+
+];
+
+
+let currentImage = 0;
+
+
+/* =========================================================
+   OPEN LIGHTBOX
+========================================================= */
+
+function openLightbox(index) {
+
+  currentImage = index;
+
+  const lightbox =
+    document.getElementById("lightbox");
+
+  lightbox.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+
+  updateLightbox();
+
+}
+
+
+/* =========================================================
+   CLOSE LIGHTBOX
+========================================================= */
+
+function closeLightbox() {
+
+  const lightbox =
+    document.getElementById("lightbox");
+
+  lightbox.classList.remove("active");
+
+  document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   UPDATE IMAGE
+========================================================= */
+
+function updateLightbox() {
+
+  const image =
+    document.getElementById("lightboxImage");
+
+  const counter =
+    document.getElementById("lightboxCounter");
+
+
+  image.src =
+    galleryImages[currentImage];
+
+
+  image.alt =
+    "VitaSea collection photo " +
+    (currentImage + 1);
+
+
+  counter.textContent =
+    (currentImage + 1) +
+    " / " +
+    galleryImages.length;
+
+}
+
+
+/* =========================================================
+   NEXT / PREVIOUS
+========================================================= */
+
+function changeImage(direction) {
+
+  currentImage += direction;
+
+
+  if (
+    currentImage >=
+    galleryImages.length
+  ) {
+
+    currentImage = 0;
+
+  }
+
+
+  if (currentImage < 0) {
+
+    currentImage =
+      galleryImages.length - 1;
+
+  }
+
+
+  updateLightbox();
+
+}
+
+
+/* =========================================================
+   KEYBOARD
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+
+    if (
+      !lightbox.classList.contains("active")
+    ) {
+
+      return;
+
+    }
+
+
+    if (event.key === "Escape") {
+
+      closeLightbox();
+
+    }
+
+
+    if (event.key === "ArrowRight") {
+
+      changeImage(1);
+
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+      changeImage(-1);
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   CLICK OUTSIDE IMAGE TO CLOSE
+========================================================= */
+
+document
+  .getElementById("lightbox")
+  .addEventListener(
+    "click",
+    function(event) {
+
+      if (
+        event.target === this
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
 
 /* =========================================================
    CHECK AVAILABILITY
@@ -684,38 +888,71 @@ function checkAvailability() {
 }
 
 
-/* =========================================================
-   VISITOR COUNTER
-=========================================================
+/* =====================================================
+   VITASEA VISITOR COUNTER
+===================================================== */
 
-   This example uses CounterAPI.
+async function updateVisitorCount() {
 
-   For production:
-   - use your own backend/database
-   - or Google Analytics
-   - or Cloudflare Workers / Supabase
-========================================================= */
-
-async function updateVisitorCounter() {
-
-  const counterElement =
+  const visitorElement =
     document.getElementById("visitorCount");
+
+  if (!visitorElement) return;
 
 
   try {
 
-    const response = await fetch(
-      "https://api.counterapi.dev/v1/vitasea-mui-ne/visits/up"
-    );
+    const counter = new Counter({
+      workspace: "vitasea-muine"
+    });
 
-    const data = await response.json();
 
-    if (data && data.count !== undefined) {
+    // Check last visit
+    const lastVisit =
+      localStorage.getItem(
+        "vitasea_last_visit"
+      );
 
-      counterElement.textContent =
-        data.count.toLocaleString();
+
+    const now = Date.now();
+
+    const ONE_DAY =
+      24 * 60 * 60 * 1000;
+
+
+    const isNewVisitor =
+      !lastVisit ||
+      now - Number(lastVisit) > ONE_DAY;
+
+
+    // Count visitor
+    if (isNewVisitor) {
+
+      await counter.up(
+        "website-visitors"
+      );
+
+
+      localStorage.setItem(
+        "vitasea_last_visit",
+        now.toString()
+      );
 
     }
+
+
+    // Get current number
+    const result =
+      await counter.get(
+        "website-visitors"
+      );
+
+
+    visitorElement.textContent =
+      Number(
+        result.value || 0
+      ).toLocaleString();
+
 
   } catch (error) {
 
@@ -724,11 +961,15 @@ async function updateVisitorCounter() {
       error
     );
 
-    counterElement.textContent = "—";
-
   }
 
 }
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  updateVisitorCount
+);
 
 
 /* =========================================================
