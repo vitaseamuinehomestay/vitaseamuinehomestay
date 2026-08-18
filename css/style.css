@@ -2082,6 +2082,10 @@ button {
 
 /* ================= CONTACT ================= */
 
+.contact-section {
+    padding-bottom: 50px;
+}
+
 .contact-grid {
   width: min(1100px, 100%);
   margin: auto;
@@ -2278,6 +2282,10 @@ button {
 
   /* CONTACT */
 
+  .contact-section {
+    padding-bottom: 50px;
+  }
+
   .contact-grid {
     width: 92%;
     grid-template-columns: repeat(2, 1fr);
@@ -2463,6 +2471,10 @@ button {
 
 
   /* ================= CONTACT ================= */
+
+    .contact-section {
+    padding-bottom: 40px;
+  }
 
   .contact-grid {
     width: 92%;
@@ -2963,6 +2975,10 @@ button {
 
   /* ================= CONTACT ================= */
 
+    .contact-section {
+    padding-bottom: 30px;
+  }
+
   .contact-grid {
     width: 90%;
 
@@ -2993,6 +3009,7 @@ button {
   /* ================= FOOTER ================= */
 
   .footer {
+    
     padding:
       45px 5% 20px;
   }
@@ -3240,6 +3257,10 @@ button {
 
   /* ================= CONTACT ================= */
 
+  .contact-section {
+    padding-bottom: 25px;
+  }
+
   .contact-grid {
     width: 92%;
   }
@@ -3380,6 +3401,10 @@ button {
 
   .service-card {
     padding: 18px;
+  }
+
+    .contact-section {
+    padding-bottom: 20px;
   }
 
 }
