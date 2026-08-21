@@ -266,7 +266,7 @@ const rooms = [
     nameKey: "room1Name",
     name: "Standard Double Room",
 
-    image: "images/Standard double room/PES08440.jpg",
+    image: "images/Standard double room/PES08453.jpg",
     alt: "Standard Double Room",
 
     info: [
@@ -289,7 +289,7 @@ const rooms = [
     name: "Superior Double Room with Kitchenette",
 
     image:
-      "images/Superior double room with kitchenette/PES08393.jpg",
+      "images/Superior double room with kitchenette/PES08407.jpg",
 
     alt: "Superior Double Room with Kitchenette",
 
@@ -312,7 +312,7 @@ const rooms = [
     nameKey: "room3Name",
     name: "Double Room with Sofa",
 
-    image: "images/Double room with sofa/PES08584.jpg",
+    image: "images/Double room with sofa/PES08578.jpg",
 
     alt: "Double Room with Sofa",
 
@@ -334,7 +334,7 @@ const rooms = [
     nameKey: "room4Name",
     name: "Double Living Room",
 
-    image: "images\\Double room with living room\\PES08593.jpg",
+    image: "images\\Double room with living room\\PES08594.jpg",
 
     alt: "Double Living Room",
 
@@ -356,7 +356,7 @@ const rooms = [
     nameKey: "room5Name",
     name: "Family Room with Living Room",
 
-    image: "images\\Family room with living room and kitchen\\PES08467.jpg",
+    image: "images\\Family room with living room and kitchen\\PES08468.jpg",
 
     alt: "Family Room with Living Room and kitchenette",
 
@@ -378,7 +378,7 @@ const rooms = [
     nameKey: "room6Name",
     name: "Family Room with a part of Sea View",
 
-    image: "images\\Family room with sea view\\PES08514.jpg",
+    image: "images\\Family room with sea view\\PES08516.jpg",
 
     alt: "Family Room with sofa and a part of Sea View",
 
@@ -401,7 +401,7 @@ const rooms = [
     nameKey: "room7Name",
     name: "Family house with pool view",
 
-    image: "images\\Family house with pool view\\PES08644.jpg",
+    image: "images\\Family house with pool view\\PES08648.jpg",
 
     alt: "Family house for 4 guests with pool view",
 
@@ -446,7 +446,7 @@ const rooms = [
     nameKey: "room9Name",
     name: "Family room with 4 double beds",
 
-    image: "images\\Family room 4 beds\\PES08718.jpg",
+    image: "images\\Family room 4 beds\\PES08725.jpg",
 
     alt: "Family room with 4 double beds",
 
