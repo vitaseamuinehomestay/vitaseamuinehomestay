@@ -11,7 +11,7 @@
    Replace this with the actual Booking.com property ID.
 ========================================================= */
 
-const BOOKING_PROPERTY_ID = "YOUR_BOOKING_PROPERTY_ID";
+const BOOKING_PROPERTY_ID = "16790790";
 
 
 /* =========================================================
@@ -29,7 +29,7 @@ const translations = {
     heroEyebrow: "MŨI NÉ · VIỆT NAM",
     heroTitle: "Kỳ nghỉ bình yên gần biển với hồ bơi",
     heroDescription:
-      "Thư giãn, bơi lội và tận hưởng không gian yên bình tại Mũi Né.",
+      "Vitasea homestay Mũi Né là nơi lý tưởng để thư giãn, bơi lội và tận hưởng không gian yên bình.",
 
     checkIn: "Nhận phòng",
     checkOut: "Trả phòng",
@@ -146,7 +146,7 @@ const translations = {
     heroEyebrow: "MUI NE · VIETNAM",
     heroTitle: "Your peaceful stay near the sea with pool",
     heroDescription:
-      "Relax, swim and enjoy the peaceful atmosphere of Mui Ne.",
+      "Vitasea Mui Ne Homestay & Pool: Relax, swim and enjoy the peaceful atmosphere of Mui Ne.",
 
     checkIn: "Check-in",
     checkOut: "Check-out",
