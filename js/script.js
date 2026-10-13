@@ -27,9 +27,9 @@ const translations = {
     navContact: "Liên hệ",
 
     heroEyebrow: "MŨI NÉ · VIỆT NAM",
-    heroTitle: "Kỳ nghỉ bình yên gần biển với hồ bơi",
+    heroTitle: "Homestay Mũi Né gần biển, có hồ bơi",
     heroDescription:
-      "Vitasea homestay Mũi Né là nơi lý tưởng để thư giãn, bơi lội và tận hưởng không gian yên bình.",
+      "VitaSea homestay Mũi Né là nơi lý tưởng để thư giãn, bơi lội và tận hưởng không gian yên bình.",
 
     checkIn: "Nhận phòng",
     checkOut: "Trả phòng",
@@ -62,7 +62,7 @@ const translations = {
       "Phòng gia đình 4 người với phòng khách riêng, phòng ngủ riêng và khu bếp nhỏ.",
     room6Name: "Phòng gia đình với một phần view biển",
     room6Description:
-      "Phòng gia đình cho 4 người với tầm nhìn một đẹp một phần ra biển.",
+      "Phòng gia đình cho 4 người với tầm nhìn ra một phần biển.",
     room7Name: "Phòng gia đình với phòng khách riêng và view hồ bơi",
     room7Description:
       "Phòng gia đình dành cho 4 người với phòng khách riêng, bếp nhỏ và tầm nhìn hồ bơi.",
@@ -129,10 +129,51 @@ const translations = {
     phone: "Điện thoại",
     address: "Địa chỉ",
     addressDetails:
-      "149 Nguyễn Đình Chiểu, khu phố Hàm Tiến 1, Phường Mũi Né,tỉnh Lâm Đồng, Việt Nam",
+      "149 Nguyễn Đình Chiểu, khu phố Hàm Tiến 1, Phường Mũi Né, tỉnh Lâm Đồng, Việt Nam",
 
-    visitors: "lượt truy cập",
-    allRights: "Bảo lưu mọi quyền."
+    allRights: "Bảo lưu mọi quyền.",
+
+    pageTitle: "Homestay Mũi Né Giá Rẻ Gần Biển, Có Hồ Bơi | VitaSea",
+    viewPhoto: "Xem ảnh",
+    galleryAlt: "Ảnh VitaSea Mũi Né Homestay & Pool",
+
+    infoBed1: "🛌🏻 1 giường đôi",
+    infoBed2: "🛌🏻 2 giường đôi",
+    infoBed3: "🛌🏻 3 giường đôi",
+    infoBed4: "🛌🏻 4 giường đôi",
+    infoGuests2: "👤 2 khách",
+    infoGuests4: "👤 4 khách",
+    infoGuests6: "👤 6 khách",
+    infoGuests8: "👤 8 khách",
+    infoGarden: "🌿 View vườn",
+    infoKitchenette: "🍳 Bếp nhỏ",
+    infoSofa: "🛋 Ghế sofa",
+    infoLiving: "Phòng khách riêng",
+    infoPool: "🏊 View hồ bơi",
+
+    alertDates: "Vui lòng chọn ngày nhận phòng và ngày trả phòng.",
+    alertOrder: "Ngày trả phòng phải sau ngày nhận phòng.",
+
+    faqEyebrow: "GIẢI ĐÁP",
+    faqTitle: "Câu hỏi thường gặp",
+    faqDescription: "Những điều khách thường hỏi trước khi đặt phòng tại VitaSea Mũi Né.",
+
+    faq1Q: "VitaSea Mui Ne Homestay & Pool ở đâu?",
+    faq1A: "VitaSea nằm tại 149 Nguyễn Đình Chiểu, khu phố Hàm Tiến 1, Phường Mũi Né, tỉnh Lâm Đồng, gần biển Mũi Né.",
+    faq2Q: "Homestay có hồ bơi không?",
+    faq2A: "Có. VitaSea có hồ bơi để bạn thư giãn và bơi lội, một số phòng gia đình còn có tầm nhìn ra hồ bơi.",
+    faq3Q: "Có bếp để tự nấu ăn và khu BBQ không?",
+    faq3A: "Có. VitaSea có bếp chung để bạn tự chuẩn bị món ăn, cùng khu ăn uống và BBQ cho những bữa tối vui vẻ với bạn bè và gia đình.",
+    faq4Q: "Giá phòng tại VitaSea là bao nhiêu?",
+    faq4A: "Giá từ 300,000₫ mỗi đêm cho phòng tiêu chuẩn một giường đôi và từ 1,200,000₫ mỗi đêm cho phòng gia đình lớn 8 người. Hãy chọn ngày ở phần Kiểm tra phòng trống để xem giá và phòng trống chính xác.",
+    faq5Q: "Có phòng cho gia đình và nhóm đông không?",
+    faq5A: "Có. VitaSea có phòng đôi cho 2 khách, phòng gia đình cho 4 khách, phòng 3 giường đôi cho 6 khách và phòng 4 giường đôi cho 8 khách.",
+    faq6Q: "VitaSea hỗ trợ jeep tour và thuê xe máy như thế nào?",
+    faq6A: "Bạn có thể đặt Jeep tour xe ghép hoặc xe riêng với giá 200,000 – 600,000₫ tùy tour, và thuê xe tay ga giá 150,000₫ mỗi ngày ngay tại VitaSea.",
+    faq7Q: "VitaSea có hỗ trợ đưa đón sân bay và đặt vé xe khách không?",
+    faq7A: "Có. VitaSea hỗ trợ đặt xe riêng đưa đón sân bay và đặt vé xe khách cho hành trình tiếp theo của bạn. Hãy liên hệ để được báo giá.",
+    faq8Q: "Đặt phòng như thế nào?",
+    faq8A: "Chọn ngày và số khách ở đầu trang rồi bấm Kiểm tra phòng trống để đặt trên Booking.com. Bạn cũng có thể liên hệ trực tiếp qua Facebook, Zalo, WhatsApp hoặc gọi +84 378 874 148."
 
   },
 
@@ -144,7 +185,7 @@ const translations = {
     navContact: "Contact",
 
     heroEyebrow: "MUI NE · VIETNAM",
-    heroTitle: "Your peaceful stay near the sea with pool",
+    heroTitle: "Mui Ne homestay near the sea, with a pool",
     heroDescription:
       "Vitasea Mui Ne Homestay & Pool: Relax, swim and enjoy the peaceful atmosphere of Mui Ne.",
 
@@ -249,329 +290,90 @@ const translations = {
     contactTitle: "Contact VitaSea",
     phone: "Phone",
     address: "Address",
-    addressDetails: "149 Nguyen Dinh Chieu, Ham Tien 1, Mui Ne ward,Lam Dong province, Viet Nam",
+    addressDetails: "149 Nguyen Dinh Chieu, Ham Tien 1, Mui Ne ward, Lam Dong province, Viet Nam",
 
-    visitors: "visitors",
-    allRights: "All rights reserved."
+    allRights: "All rights reserved.",
+
+    pageTitle: "Mui Ne Homestay with Pool near the Beach | VitaSea",
+    viewPhoto: "View photo",
+    galleryAlt: "VitaSea Mui Ne Homestay & Pool photo",
+
+    infoBed1: "🛌🏻 1 Double Bed",
+    infoBed2: "🛌🏻 2 Double Beds",
+    infoBed3: "🛌🏻 3 Double Beds",
+    infoBed4: "🛌🏻 4 Double Beds",
+    infoGuests2: "👤 2 Guests",
+    infoGuests4: "👤 4 Guests",
+    infoGuests6: "👤 6 Guests",
+    infoGuests8: "👤 8 Guests",
+    infoGarden: "🌿 Garden View",
+    infoKitchenette: "🍳 Kitchenette",
+    infoSofa: "🛋 Sofa",
+    infoLiving: "Living Room",
+    infoPool: "🏊 Pool View",
+
+    alertDates: "Please select your check-in and check-out dates.",
+    alertOrder: "Check-out must be after check-in.",
+
+    faqEyebrow: "GOOD TO KNOW",
+    faqTitle: "Frequently asked questions",
+    faqDescription: "What guests usually ask before booking at VitaSea Mui Ne.",
+
+    faq1Q: "Where is VitaSea Mui Ne Homestay & Pool?",
+    faq1A: "VitaSea is at 149 Nguyen Dinh Chieu, Ham Tien 1, Mui Ne ward, Lam Dong province, close to Mui Ne beach.",
+    faq2Q: "Is there a swimming pool?",
+    faq2A: "Yes. VitaSea has a pool where you can relax and swim, and some family rooms have a pool view.",
+    faq3Q: "Can I cook my own meals or have a BBQ?",
+    faq3A: "Yes. We have a shared kitchen for preparing your own meals, plus a dining and BBQ area for fun evenings with friends and family.",
+    faq4Q: "How much does a room cost?",
+    faq4A: "Prices start from 300,000₫ per night for a standard double room and from 1,200,000₫ per night for the large family room for 8 guests. Choose your dates in Check Availability to see exact prices and availability.",
+    faq5Q: "Do you have rooms for families and large groups?",
+    faq5A: "Yes. We have double rooms for 2 guests, family rooms for 4 guests, a room with 3 double beds for 6 guests and a room with 4 double beds for 8 guests.",
+    faq6Q: "Can you arrange jeep tours and motorbike rental?",
+    faq6A: "Yes. You can book a shared or private Jeep tour for 200,000 – 600,000₫ depending on the tour, and rent a scooter for 150,000₫ per day right at VitaSea.",
+    faq7Q: "Do you help with airport transfers and bus tickets?",
+    faq7A: "Yes. We can arrange a private car to and from the airport and book bus tickets for your next destination. Contact us for a quote.",
+    faq8Q: "How do I book?",
+    faq8A: "Choose your dates and guests at the top of the page and press Check Availability to book on Booking.com. You can also contact us directly on Facebook, Zalo, WhatsApp or call +84 378 874 148."
 
   }
 
 };
 
-/* ================= ROOMS DATA ================= */
-
-const rooms = [
-  {
-    id: "standard",
-    nameKey: "room1Name",
-    name: "Standard Double Room",
-
-    image: "images/Standard double room/PES08453.jpg",
-    alt: "Standard Double Room",
-
-    info: [
-      "🛌🏻 1 Double Bed",
-      "👤 2 Guests",
-      "🌿 Garden View"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room1Description",
-    description:
-      "Comfortable room with a beautiful view of the garden.",
-
-    price: "400,000₫"
-  },
-
-  {
-    id: "superior",
-    nameKey: "room2Name",
-    name: "Superior Double Room with Kitchenette",
-
-    image:
-      "images/Superior double room with kitchenette/PES08407.jpg",
-
-    alt: "Superior Double Room with Kitchenette",
-
-    info: [
-      "🛌🏻 1 Double Bed",
-      "👤 2 Guests",
-      "🍳 Kitchenette"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room2Description",
-    description:
-      "A double room with a private kitchenette for 2 people.",
-
-    price: "500,000₫"
-  },
-
-  {
-    id: "double-sofa",
-    nameKey: "room3Name",
-    name: "Double Room with Sofa",
-
-    image: "images/Double room with sofa/PES08578.jpg",
-
-    alt: "Double Room with Sofa",
-
-    info: [
-      "🛌🏻 1 Double Bed",
-      "👤 2 Guests",
-      "🛋 Sofa"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room3Description",
-    description:
-      "A double room with a comfortable sofa for 2 guests.",
-
-    price: "600,000₫"
-  },
-  {
-    id: "double-living-room",
-    nameKey: "room4Name",
-    name: "Double Living Room",
-
-    image: "images\\Double room with living room\\PES08594.jpg",
-
-    alt: "Double Living Room",
-
-    info: [
-      "🛌🏻 1 Double Bed",
-      "👤 2 Guests",
-      "Living Room"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room4Description",
-    description:
-      "A double room with separated living room and bedroom for 2 guests.",
-
-    price: "600,000₫"
-  } ,
-  {
-    id: "family-room-living-room",
-    nameKey: "room5Name",
-    name: "Family Room with Living Room",
-
-    image: "images\\Family room with living room and kitchen\\PES08468.jpg",
-
-    alt: "Family Room with Living Room and kitchenette",
-
-    info: [
-      "🛌🏻 2 Double Bed",
-      "👤 4 Guests",
-      "Living Room"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room5Description",
-    description:
-      "Family room with separated living room and bedroom for 4 guests.",
-
-    price: "700,000₫"
-  },
-  {
-    id: "family-room-seaview",
-    nameKey: "room6Name",
-    name: "Family Room with a part of Sea View",
-
-    image: "images\\Family room with sea view\\PES08516.jpg",
-
-    alt: "Family Room with sofa and a part of Sea View",
-
-    info: [
-      "🛌🏻 2 Double Bed",
-      "👤 4 Guests",
-      "Living Room"
-    ],
-    from: "from",
-    perNight:"perNight",
-    descriptionKey: "room6Description",
-    description:
-      "Family room with separated living room and bedroom for 4 guests.",
-
-    price: "900,000₫"
-  }
-  ,
-  {
-    id: "family-house-pool-view",
-    nameKey: "room7Name",
-    name: "Family house with pool view",
-
-    image: "images\\Family house with pool view\\PES08648.jpg",
-
-    alt: "Family house for 4 guests with pool view",
-
-    info: [
-      "🛌🏻 2 Double Bed",
-      "👤 4 Guests",
-      "🏊 Pool View"
-    ],
-    from: "from",
-    perNight:"perNight",
-    descriptionKey: "room7Description",
-    description:
-      "Family house with separated living room and bedroom for 4 guests and pool view.",
-
-    price: "1,000,000₫"
-  },
-  {
-    id: "family-room-3",
-    nameKey: "room8Name",
-    name: "Family room with 3 double beds",
-
-    image: "images\\Family room 3 beds\\family-3-beds.jpg",
-
-    alt: "Family room with 3 double beds",
-
-    info: [
-      "🛌🏻 3 Double Bed",
-      "👤 6 Guests",
-      "🏊 Pool View"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room8Description",
-    description:
-      "Family room with three double beds for up to six guests.",
-
-    price: "1,100,000₫"
-  }
-  ,
-  {
-    id: "family-4-beds",
-    nameKey: "room9Name",
-    name: "Family room with 4 double beds",
-
-    image: "images\\Family room 4 beds\\PES08725.jpg",
-
-    alt: "Family room with 4 double beds",
-
-    info: [
-      "🛌🏻 4 Double Bed",
-      "👤 8 Guests",
-      "🏊 Pool View"
-    ],
-    perNight:"perNight",
-    from: "from",
-    descriptionKey: "room9Description",
-    description:
-      "Family room with four double beds for up to eight guests.",
-
-    price: "1,400,000₫"
-  }
-];
-
-/* ================= RENDER ROOMS ================= */
-
-function renderRooms() {
-
-  const container = document.getElementById("roomsGrid");
-
-  if (!container) return;
-
-  container.innerHTML = rooms.map(room => `
-
-    <article class="room-card">
-
-      <div class="room-image">
-
-        <img
-          src="${room.image}"
-          alt="${room.alt}"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <div class="room-content">
-
-        <h3 data-i18n="${room.nameKey}">
-          ${room.name}
-        </h3>
-
-
-        <div class="room-info">
-
-          ${room.info.map(item => `
-            <span>${item}</span>
-          `).join("")}
-
-        </div>
-
-
-        <p data-i18n="${room.descriptionKey}">
-          ${room.description}
-        </p>
-
-
-        <div class="room-bottom">
-
-          <div class="price">
-
-            <strong>
-              <span data-i18n="${room.from}">From</span> ${room.price}
-            </strong>
-
-            <small data-i18n="${room.perNight}">
-              ${translations[savedLanguage][room.perNight]}
-            </small>
-
-          </div>
-
-
-          <div class="room-buttons">
-
-            <a
-              class="book-btn"
-              href="${WEBSITE_LINKS.booking}"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="bookNow"
-            >
-              Facebook
-            </a>
-
-            <a
-              class="zalo-btn"
-              href="${WEBSITE_LINKS.zalo}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Zalo
-            </a>
-            <a
-              class="whatsapp-btn"
-              href="${WEBSITE_LINKS.whatsapp}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Whatsapp
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  `).join("");
+/* =========================================================
+   ROOMS
+
+   Các thẻ phòng nằm trực tiếp trong index.html (thẻ <article class="room-card">)
+   để Google và các công cụ tìm kiếm đọc được nội dung ngay, không cần chạy JavaScript.
+   Muốn đổi giá, ảnh hay thêm phòng: sửa trong index.html.
+   Tên phòng, mô tả và các dòng thông tin được dịch bằng các khóa
+   (room1Name, room1Description, infoBed1...) trong bảng translations ở trên.
+========================================================= */
+
+function currentLanguage() {
+  return document.documentElement.lang === "en" ? "en" : "vi";
 }
 
+function t(key) {
+  return translations[currentLanguage()][key];
+}
 
-/* Render khi trang load */
-
-document.addEventListener("DOMContentLoaded", renderRooms);
+function getSavedLanguage() {
+  try {
+    const saved = localStorage.getItem("vitaseaLanguage");
+    return translations[saved] ? saved : "vi";
+  } catch (error) {
+    return "vi";
+  }
+}
 
 function setLanguage(language) {
 
-  localStorage.setItem("vitaseaLanguage", language);
+  try {
+    localStorage.setItem("vitaseaLanguage", language);
+  } catch (error) {
+    /* Trình duyệt chặn localStorage (ví dụ chế độ ẩn danh): bỏ qua */
+  }
 
   document.documentElement.lang = language;
 
@@ -588,6 +390,24 @@ function setLanguage(language) {
 
     });
 
+  /* Dịch thuộc tính alt của ảnh */
+  document
+    .querySelectorAll("[data-i18n-alt]")
+    .forEach(element => {
+
+      const key = element.dataset.i18nAlt;
+
+      if (translations[language][key]) {
+        element.alt =
+          translations[language][key];
+      }
+
+    });
+
+  /* Tiêu đề tab trình duyệt */
+  if (translations[language].pageTitle) {
+    document.title = translations[language].pageTitle;
+  }
 
   document.getElementById("viBtn")
     .classList.toggle("active", language === "vi");
@@ -608,6 +428,14 @@ const WEBSITE_LINKS = {
   whatsapp:
     "https://wa.me/+84378874148"
 };
+
+/* Gắn link cho các nút Facebook / Zalo / WhatsApp trong thẻ phòng.
+   Chỉ cần đổi link ở WEBSITE_LINKS ở trên là mọi nút đều cập nhật. */
+document
+  .querySelectorAll("[data-link]")
+  .forEach(link => {
+    link.href = WEBSITE_LINKS[link.dataset.link];
+  });
 
 
 /* =========================================================
@@ -730,7 +558,7 @@ function updateLightbox() {
 
 
   image.alt =
-    "VitaSea collection photo " +
+    t("galleryAlt") + " " +
     (currentImage + 1);
 
 
@@ -859,9 +687,7 @@ function checkAvailability() {
 
   if (!checkIn || !checkOut) {
 
-    alert(
-      "Please select your check-in and check-out dates."
-    );
+    alert(t("alertDates"));
 
     return;
   }
@@ -869,9 +695,7 @@ function checkAvailability() {
 
   if (new Date(checkOut) <= new Date(checkIn)) {
 
-    alert(
-      "Check-out must be after check-in."
-    );
+    alert(t("alertOrder"));
 
     return;
   }
@@ -911,14 +735,8 @@ document.getElementById("year")
    INITIAL LANGUAGE
 ========================================================= */
 
-const savedLanguage =
-  localStorage.getItem("vitaseaLanguage") || "en";
+/* Mặc định tiếng Việt (khớp với <html lang="vi">, title và description).
+   Nếu khách đã chọn ngôn ngữ trước đó thì dùng lại lựa chọn đó. */
+const savedLanguage = getSavedLanguage();
 
 setLanguage(savedLanguage);
-
-
-/* =========================================================
-   START VISITOR COUNTER
-========================================================= */
-
-updateVisitorCounter();
