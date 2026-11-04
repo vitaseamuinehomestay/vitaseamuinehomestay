@@ -441,33 +441,56 @@ document
 /* =========================================================
    DATE VALIDATION
 ========================================================= */
+// Thay đổi form check in date thành ngày hôm nay, check out date thành ngày mai, và không cho chọn ngày trong quá khứ.
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return year + "-" + month + "-" + day;
+}
 
 const today = new Date();
 
-const todayString =
-  today.toISOString().split("T")[0];
+const tomorrow = new Date(
+  today.getFullYear(),
+  today.getMonth(),
+  today.getDate() + 1
+);
 
-document.getElementById("checkIn").min =
-  todayString;
+const todayString = formatDate(today);
+const tomorrowString = formatDate(tomorrow);
 
-document.getElementById("checkOut").min =
-  todayString;
+const checkInInput = document.getElementById("checkIn");
+const checkOutInput = document.getElementById("checkOut");
 
+/* Không cho chọn ngày trong quá khứ */
+checkInInput.min = todayString;
+checkOutInput.min = tomorrowString;
 
-document.getElementById("checkIn")
-  .addEventListener("change", function () {
+/* Mặc định: nhận phòng hôm nay, trả phòng ngày mai */
+checkInInput.value = todayString;
+checkOutInput.value = tomorrowString;
 
-    const checkInDate =
-      new Date(this.value);
+/* Khi đổi ngày nhận phòng: ngày trả phòng tối thiểu là hôm sau,
+   và tự đẩy ngày trả phòng lên nếu nó đang nhỏ hơn hoặc bằng ngày nhận phòng */
+checkInInput.addEventListener("change", function () {
 
-    checkInDate.setDate(
-      checkInDate.getDate() + 1
-    );
+  if (!this.value) return;
 
-    document.getElementById("checkOut").min =
-      checkInDate.toISOString().split("T")[0];
+  const parts = this.value.split("-").map(Number);
 
-  });
+  const nextDay = new Date(parts[0], parts[1] - 1, parts[2] + 1);
+
+  const nextDayString = formatDate(nextDay);
+
+  checkOutInput.min = nextDayString;
+
+  if (!checkOutInput.value || checkOutInput.value < nextDayString) {
+    checkOutInput.value = nextDayString;
+  }
+
+});
 
   /* =========================================================
    VITASEA COLLECTIONS LIGHTBOX
