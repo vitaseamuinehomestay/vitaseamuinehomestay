@@ -74,6 +74,34 @@ const translations = {
       "Phòng gia đình lớn với 4 giường đôi ở được 8 người và tầm nhìn hồ bơi.",
 
     perNight: "/ đêm",
+
+    viewDetails: "Xem chi tiết",
+    modalClose: "Đóng",
+    modalPrev: "Ảnh trước",
+    modalNext: "Ảnh tiếp theo",
+    modalBedLabel: "Loại giường",
+    modalGuestsLabel: "Sức chứa tối đa",
+    modalBed1: "1 giường đôi",
+    modalBed2: "2 giường",
+    modalBed3: "3 giường",
+    modalBed4: "4 giường",
+    modalGuests2: "2 người",
+    modalGuests4: "4 người",
+    modalGuests6: "6 người",
+    modalGuests8: "8 người",
+    modalAmenities: "Tiện nghi cơ bản",
+    facAc: "Điều hòa",
+    facHotWater: "Nước nóng",
+    facWifi: "Wifi miễn phí",
+    facLaundry: "Máy giặt chung",
+    facPool: "Hồ bơi chung",
+    facKitchenShared: "Bếp chung",
+    facKitchenPrivate: "Bếp nhỏ riêng trong phòng",
+    modalBook: "Liên hệ đặt phòng ngay",
+    modalBookHint: "Mở Messenger của fanpage VitaSea. Nội dung đặt phòng sẽ được sao chép sẵn để bạn dán vào tin nhắn.",
+    modalCopied: "Đã sao chép nội dung đặt phòng. Hãy dán (Ctrl+V) vào khung chat Messenger rồi gửi cho chúng tôi nhé!",
+    bookingMessage: "Chào VitaSea, mình muốn đặt phòng \"{room}\". Ngày nhận phòng: {checkIn}. Ngày trả phòng: {checkOut}. Bạn kiểm tra giúp mình phòng trống và giá nhé!",
+    bookingMessageNoDates: "Chào VitaSea, mình muốn đặt phòng \"{room}\". Bạn kiểm tra giúp mình phòng trống và giá nhé!",
     from: "Giá chỉ từ",
     bookNow: "Facebook",
 
@@ -237,6 +265,34 @@ const translations = {
       "Large family room with 4 double beds for 8 guests and a pool view.",
 
     perNight: "/ night",
+
+    viewDetails: "View details",
+    modalClose: "Close",
+    modalPrev: "Previous photo",
+    modalNext: "Next photo",
+    modalBedLabel: "Bed type",
+    modalGuestsLabel: "Max capacity",
+    modalBed1: "1 double bed",
+    modalBed2: "2 beds",
+    modalBed3: "3 beds",
+    modalBed4: "4 beds",
+    modalGuests2: "2 guests",
+    modalGuests4: "4 guests",
+    modalGuests6: "6 guests",
+    modalGuests8: "8 guests",
+    modalAmenities: "Basic amenities",
+    facAc: "Air conditioning",
+    facHotWater: "Hot water",
+    facWifi: "Free wifi",
+    facLaundry: "Shared washing machine",
+    facPool: "Shared swimming pool",
+    facKitchenShared: "Shared kitchen",
+    facKitchenPrivate: "Private kitchenette in the room",
+    modalBook: "Contact us to book now",
+    modalBookHint: "Opens the VitaSea fanpage on Messenger. Your booking message is copied so you can paste it into the chat.",
+    modalCopied: "Booking message copied. Paste it (Ctrl+V) into the Messenger chat and send it to us!",
+    bookingMessage: "Hello VitaSea, I would like to book \"{room}\". Check-in: {checkIn}. Check-out: {checkOut}. Could you check availability and the price for me?",
+    bookingMessageNoDates: "Hello VitaSea, I would like to book \"{room}\". Could you check availability and the price for me?",
     from: "From",
     bookNow: "Facebook",
 
@@ -404,6 +460,27 @@ function setLanguage(language) {
 
     });
 
+  /* Dịch nhãn aria-label (nút đóng, nút chuyển ảnh...) */
+  document
+    .querySelectorAll("[data-i18n-label]")
+    .forEach(element => {
+
+      const key = element.dataset.i18nLabel;
+
+      if (translations[language][key]) {
+        element.setAttribute(
+          "aria-label",
+          translations[language][key]
+        );
+      }
+
+    });
+
+  /* Cập nhật popup phòng nếu đang mở */
+  if (typeof refreshRoomModal === "function") {
+    refreshRoomModal();
+  }
+
   /* Tiêu đề tab trình duyệt */
   if (translations[language].pageTitle) {
     document.title = translations[language].pageTitle;
@@ -426,7 +503,11 @@ const WEBSITE_LINKS = {
     "https://zalo.me/+84378874148",
 
   whatsapp:
-    "https://wa.me/+84378874148"
+    "https://wa.me/+84378874148",
+
+  /* Nút "Liên hệ đặt phòng ngay" trong popup phòng: mở Messenger của fanpage */
+  messenger:
+    "https://m.me/vitaseamuinehomestay"
 };
 
 /* Gắn link cho các nút Facebook / Zalo / WhatsApp trong thẻ phòng.
@@ -441,22 +522,23 @@ document
 /* =========================================================
    DATE VALIDATION
 ========================================================= */
-// Thay đổi form check in date thành ngày hôm nay, check out date thành ngày mai, và không cho chọn ngày trong quá khứ.
-function formatDate(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
 
-  return year + "-" + month + "-" + day;
+/* Định dạng ngày theo giờ địa phương (YYYY-MM-DD), không dùng toISOString()
+   vì nó đổi sang giờ UTC và có thể lệch một ngày ở Việt Nam. */
+function formatDate(date) {
+
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+
+  return y + "-" + m + "-" + d;
+
 }
 
 const today = new Date();
 
-const tomorrow = new Date(
-  today.getFullYear(),
-  today.getMonth(),
-  today.getDate() + 1
-);
+const tomorrow = new Date(today);
+tomorrow.setDate(today.getDate() + 1);
 
 const todayString = formatDate(today);
 const tomorrowString = formatDate(tomorrow);
@@ -464,7 +546,6 @@ const tomorrowString = formatDate(tomorrow);
 const checkInInput = document.getElementById("checkIn");
 const checkOutInput = document.getElementById("checkOut");
 
-/* Không cho chọn ngày trong quá khứ */
 checkInInput.min = todayString;
 checkOutInput.min = tomorrowString;
 
@@ -472,22 +553,22 @@ checkOutInput.min = tomorrowString;
 checkInInput.value = todayString;
 checkOutInput.value = tomorrowString;
 
-/* Khi đổi ngày nhận phòng: ngày trả phòng tối thiểu là hôm sau,
-   và tự đẩy ngày trả phòng lên nếu nó đang nhỏ hơn hoặc bằng ngày nhận phòng */
 checkInInput.addEventListener("change", function () {
 
-  if (!this.value) return;
+  if (!this.value) {
+    return;
+  }
 
-  const parts = this.value.split("-").map(Number);
+  const next = new Date(this.value + "T00:00:00");
+  next.setDate(next.getDate() + 1);
 
-  const nextDay = new Date(parts[0], parts[1] - 1, parts[2] + 1);
+  const nextString = formatDate(next);
 
-  const nextDayString = formatDate(nextDay);
+  checkOutInput.min = nextString;
 
-  checkOutInput.min = nextDayString;
-
-  if (!checkOutInput.value || checkOutInput.value < nextDayString) {
-    checkOutInput.value = nextDayString;
+  /* Nếu ngày trả phòng đang trống hoặc không còn hợp lệ thì đặt lại là ngày hôm sau */
+  if (!checkOutInput.value || checkOutInput.value < nextString) {
+    checkOutInput.value = nextString;
   }
 
 });
@@ -760,6 +841,465 @@ document.getElementById("year")
 
 /* Mặc định tiếng Việt (khớp với <html lang="vi">, title và description).
    Nếu khách đã chọn ngôn ngữ trước đó thì dùng lại lựa chọn đó. */
+
+/* =========================================================
+   POPUP CHI TIẾT PHÒNG
+
+   Bấm vào ảnh/thẻ phòng (thẻ có thuộc tính data-room="roomN") để mở popup.
+   Tên, mô tả lấy từ bảng translations (roomNName, roomNDescription).
+
+   >>> THÊM ẢNH CHO TỪNG PHÒNG: thêm đường dẫn ảnh vào mảng "images" bên dưới.
+       Ảnh đầu tiên là ảnh bìa. Nếu chỉ có 1 ảnh, popup tự ẩn mũi tên và dải ảnh nhỏ.
+   >>> bed    : số giường (1-4)      -> khóa dịch modalBed1..modalBed4
+   >>> guests : sức chứa tối đa      -> khóa dịch modalGuests2/4/6/8
+   >>> kitchen: "shared" = bếp chung, "private" = bếp nhỏ riêng trong phòng
+========================================================= */
+
+const roomDetails = {
+
+  room1: {
+    images: [
+      "images/Standard%20double%20room/PES08453.jpg"
+      /* , "images/Standard%20double%20room/ten-anh-khac.jpg" */
+    ],
+    bed: 1, guests: 2, kitchen: "shared"
+  },
+
+  room2: {
+    images: [
+      "images/Superior%20double%20room%20with%20kitchenette/PES08407.jpg"
+    ],
+    bed: 1, guests: 2, kitchen: "private"
+  },
+
+  room3: {
+    images: [
+      "images/Double%20room%20with%20sofa/PES08578.jpg"
+    ],
+    bed: 1, guests: 2, kitchen: "shared"
+  },
+
+  room4: {
+    images: [
+      "images/Double%20room%20with%20living%20room/PES08594.jpg"
+    ],
+    bed: 1, guests: 2, kitchen: "shared"
+  },
+
+  room5: {
+    images: [
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08468.jpg"
+    ],
+    bed: 2, guests: 4, kitchen: "private"
+  },
+
+  room6: {
+    images: [
+      "images/Family%20room%20with%20sea%20view/PES08516.jpg"
+    ],
+    bed: 2, guests: 4, kitchen: "shared"
+  },
+
+  room7: {
+    images: [
+      "images/Family%20house%20with%20pool%20view/PES08648.jpg"
+    ],
+    bed: 2, guests: 4, kitchen: "private"
+  },
+
+  room8: {
+    images: [
+      "images/Family%20room%203%20beds/family-3-beds.jpg"
+    ],
+    bed: 3, guests: 6, kitchen: "shared"
+  },
+
+  room9: {
+    images: [
+      "images/Family%20room%204%20beds/PES08725.jpg"
+    ],
+    bed: 4, guests: 8, kitchen: "shared"
+  }
+
+};
+
+/* Danh sách tiện nghi cơ bản: [biểu tượng Font Awesome, khóa dịch] */
+function roomAmenities(details) {
+
+  return [
+    ["fa-snowflake", "facAc"],
+    ["fa-shower", "facHotWater"],
+    ["fa-wifi", "facWifi"],
+    ["fa-jug-detergent", "facLaundry"],
+    ["fa-person-swimming", "facPool"],
+    details.kitchen === "private"
+      ? ["fa-kitchen-set", "facKitchenPrivate"]
+      : ["fa-kitchen-set", "facKitchenShared"]
+  ];
+
+}
+
+const roomModal = document.getElementById("roomModal");
+
+let roomModalState = {
+  key: null,
+  index: 0,
+  card: null,
+  trigger: null
+};
+
+function roomModalIsOpen() {
+  return roomModal && roomModal.classList.contains("active");
+}
+
+function openRoomModal(card, trigger) {
+
+  const key = card.dataset.room;
+  const details = roomDetails[key];
+
+  if (!details || !roomModal) {
+    return;
+  }
+
+  roomModalState = { key: key, index: 0, card: card, trigger: trigger || null };
+
+  renderRoomModal();
+
+  roomModal.classList.add("active");
+  roomModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  document.getElementById("roomModalNote").textContent = "";
+
+  /* Chờ popup hiện ra rồi mới đưa focus vào nút đóng */
+  setTimeout(function () {
+    if (roomModalIsOpen()) {
+      document.getElementById("roomModalClose").focus();
+    }
+  }, 30);
+
+}
+
+function closeRoomModal() {
+
+  if (!roomModalIsOpen()) {
+    return;
+  }
+
+  roomModal.classList.remove("active");
+  roomModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  const trigger = roomModalState.trigger;
+  roomModalState.key = null;
+
+  if (trigger && typeof trigger.focus === "function") {
+    trigger.focus();
+  }
+
+}
+
+function renderRoomModal() {
+
+  const key = roomModalState.key;
+  const details = roomDetails[key];
+
+  if (!details) {
+    return;
+  }
+
+  const card = roomModalState.card;
+
+  document.getElementById("roomModalTitle").textContent = t(key + "Name");
+  document.getElementById("roomModalDesc").textContent = t(key + "Description");
+
+  document.getElementById("roomModalBed").textContent = t("modalBed" + details.bed);
+  document.getElementById("roomModalGuests").textContent = t("modalGuests" + details.guests);
+
+  /* Tiện nghi */
+  const list = document.getElementById("roomModalAmenities");
+  list.innerHTML = "";
+
+  roomAmenities(details).forEach(function (item) {
+
+    const li = document.createElement("li");
+    const icon = document.createElement("i");
+    const label = document.createElement("span");
+
+    icon.className = "fa-solid " + item[0];
+    icon.setAttribute("aria-hidden", "true");
+    label.textContent = t(item[1]);
+
+    li.appendChild(icon);
+    li.appendChild(label);
+    list.appendChild(li);
+
+  });
+
+  /* Giá: lấy từ thẻ phòng nên chỉ cần sửa giá ở một nơi */
+  const priceEl = card.querySelector(".price strong");
+  const perEl = card.querySelector(".price small");
+
+  document.getElementById("roomModalPrice").textContent =
+    priceEl ? priceEl.textContent.replace(/\s+/g, " ").trim() : "";
+  document.getElementById("roomModalPer").textContent =
+    perEl ? perEl.textContent.trim() : "";
+
+  /* Thư viện ảnh */
+  const thumbs = document.getElementById("roomModalThumbs");
+  thumbs.innerHTML = "";
+
+  details.images.forEach(function (src, i) {
+
+    const button = document.createElement("button");
+    const img = document.createElement("img");
+
+    button.type = "button";
+    button.dataset.index = i;
+    button.setAttribute("aria-label", t(key + "Name") + " " + (i + 1));
+
+    img.src = src;
+    img.alt = "";
+    img.loading = "lazy";
+
+    button.appendChild(img);
+    thumbs.appendChild(button);
+
+  });
+
+  document
+    .getElementById("roomModalGallery")
+    .classList.toggle("single", details.images.length < 2);
+
+  showRoomImage(roomModalState.index);
+
+}
+
+/* Gọi từ setLanguage để popup đang mở đổi ngôn ngữ ngay */
+function refreshRoomModal() {
+
+  if (roomModalIsOpen() && roomModalState.key) {
+    renderRoomModal();
+  }
+
+}
+
+function showRoomImage(index) {
+
+  const details = roomDetails[roomModalState.key];
+  const total = details.images.length;
+
+  roomModalState.index = (index + total) % total;
+
+  const img = document.getElementById("roomModalImage");
+
+  img.src = details.images[roomModalState.index];
+  img.alt = t(roomModalState.key + "Name");
+
+  document.getElementById("roomModalCounter").textContent =
+    (roomModalState.index + 1) + " / " + total;
+
+  document
+    .querySelectorAll("#roomModalThumbs button")
+    .forEach(function (button, i) {
+      button.classList.toggle("active", i === roomModalState.index);
+      button.setAttribute("aria-current", i === roomModalState.index ? "true" : "false");
+    });
+
+}
+
+/* Ngày dạng YYYY-MM-DD -> dd/mm/yyyy */
+function formatDisplayDate(value) {
+
+  const parts = value.split("-");
+
+  return parts[2] + "/" + parts[1] + "/" + parts[0];
+
+}
+
+function buildBookingMessage() {
+
+  const room = t(roomModalState.key + "Name");
+  const checkIn = document.getElementById("checkIn").value;
+  const checkOut = document.getElementById("checkOut").value;
+
+  if (checkIn && checkOut && checkOut > checkIn) {
+
+    return t("bookingMessage")
+      .replace("{room}", room)
+      .replace("{checkIn}", formatDisplayDate(checkIn))
+      .replace("{checkOut}", formatDisplayDate(checkOut));
+
+  }
+
+  return t("bookingMessageNoDates").replace("{room}", room);
+
+}
+
+/* Messenger không cho điền sẵn nội dung qua link, nên sao chép tin nhắn vào
+   clipboard rồi mở chat với fanpage để khách chỉ cần dán và gửi. */
+function bookRoomViaMessenger() {
+
+  const message = buildBookingMessage();
+  const note = document.getElementById("roomModalNote");
+
+  /* window.open phải chạy ngay trong sự kiện bấm để không bị chặn popup */
+  window.open(WEBSITE_LINKS.messenger, "_blank", "noopener");
+
+  note.textContent = t("modalCopied");
+
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(message).catch(function () {});
+    }
+  } catch (error) {
+    /* Không sao chép được: khách vẫn vào được Messenger và tự nhập tin nhắn */
+  }
+
+}
+
+if (roomModal) {
+
+  /* Bấm vào thẻ phòng (trừ các nút Facebook/Zalo/WhatsApp) để mở popup */
+  const roomsGrid = document.getElementById("roomsGrid");
+
+  roomsGrid.addEventListener("click", function (event) {
+
+    if (event.target.closest(".room-buttons")) {
+      return;
+    }
+
+    const card = event.target.closest(".room-card[data-room]");
+
+    if (card) {
+      openRoomModal(card, card.querySelector(".room-image") || card);
+    }
+
+  });
+
+  /* Bàn phím: Enter / Space trên ảnh phòng */
+  roomsGrid.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    const image = event.target.closest(".room-image");
+
+    if (image && event.target === image) {
+      event.preventDefault();
+      openRoomModal(image.closest(".room-card[data-room]"), image);
+    }
+
+  });
+
+  document.getElementById("roomModalClose")
+    .addEventListener("click", closeRoomModal);
+
+  roomModal.addEventListener("click", function (event) {
+    if (event.target === roomModal) {
+      closeRoomModal();
+    }
+  });
+
+  document.getElementById("roomModalPrev")
+    .addEventListener("click", function () {
+      showRoomImage(roomModalState.index - 1);
+    });
+
+  document.getElementById("roomModalNext")
+    .addEventListener("click", function () {
+      showRoomImage(roomModalState.index + 1);
+    });
+
+  document.getElementById("roomModalThumbs")
+    .addEventListener("click", function (event) {
+
+      const button = event.target.closest("button[data-index]");
+
+      if (button) {
+        showRoomImage(Number(button.dataset.index));
+      }
+
+    });
+
+  document.getElementById("roomModalBook")
+    .addEventListener("click", bookRoomViaMessenger);
+
+  /* Vuốt trái / phải trên ảnh (điện thoại) */
+  let touchStartX = null;
+  const stage = document.querySelector(".room-modal-stage");
+
+  stage.addEventListener("touchstart", function (event) {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  stage.addEventListener("touchend", function (event) {
+
+    if (touchStartX === null) {
+      return;
+    }
+
+    const diff = event.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+
+    if (Math.abs(diff) > 50) {
+      showRoomImage(roomModalState.index + (diff < 0 ? 1 : -1));
+    }
+
+  }, { passive: true });
+
+  /* Phím tắt + giữ focus trong popup */
+  document.addEventListener("keydown", function (event) {
+
+    if (!roomModalIsOpen()) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeRoomModal();
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      showRoomImage(roomModalState.index - 1);
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      showRoomImage(roomModalState.index + 1);
+      return;
+    }
+
+    if (event.key === "Tab") {
+
+      const focusable = Array.from(
+        roomModal.querySelectorAll("button, a[href], [tabindex]:not([tabindex='-1'])")
+      ).filter(function (el) {
+        return el.offsetParent !== null && !el.disabled;
+      });
+
+      if (!focusable.length) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+
+    }
+
+  });
+
+}
+
 const savedLanguage = getSavedLanguage();
 
 setLanguage(savedLanguage);

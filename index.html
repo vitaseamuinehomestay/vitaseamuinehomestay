@@ -304,15 +304,6 @@
   >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JZYCD15GCG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JZYCD15GCG');
-</script>
 </head>
 
 <body>
@@ -825,14 +816,15 @@
   <!--
     Các thẻ phòng viết trực tiếp bằng HTML để Google đọc được nội dung.
     Muốn thêm phòng: sao chép nguyên một khối <article class="room-card"> bên dưới,
-    đổi ảnh, giá, và thêm các khóa dịch (roomXName, roomXDescription) trong js/script.js.
+    đổi ảnh, giá, thêm data-room="roomX" cho thẻ, rồi thêm các khóa dịch (roomXName, roomXDescription)
+    và mục roomX trong roomDetails (ảnh, loại giường, sức chứa, bếp) trong js/script.js.
   -->
   <div class="rooms-grid" id="roomsGrid">
 
     <!-- Phòng 1 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room1">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Standard%20double%20room/PES08453.jpg"
@@ -841,6 +833,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -921,9 +916,9 @@
     </article>
 
     <!-- Phòng 2 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room2">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Superior%20double%20room%20with%20kitchenette/PES08407.jpg"
@@ -932,6 +927,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1012,9 +1010,9 @@
     </article>
 
     <!-- Phòng 3 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room3">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Double%20room%20with%20sofa/PES08578.jpg"
@@ -1023,6 +1021,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1103,9 +1104,9 @@
     </article>
 
     <!-- Phòng 4 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room4">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Double%20room%20with%20living%20room/PES08594.jpg"
@@ -1114,6 +1115,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1194,9 +1198,9 @@
     </article>
 
     <!-- Phòng 5 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room5">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Family%20room%20with%20living%20room%20and%20kitchen/PES08468.jpg"
@@ -1205,6 +1209,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1285,9 +1292,9 @@
     </article>
 
     <!-- Phòng 6 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room6">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Family%20room%20with%20sea%20view/PES08516.jpg"
@@ -1296,6 +1303,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1376,9 +1386,9 @@
     </article>
 
     <!-- Phòng 7 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room7">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Family%20house%20with%20pool%20view/PES08648.jpg"
@@ -1387,6 +1397,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1467,9 +1480,9 @@
     </article>
 
     <!-- Phòng 8 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room8">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Family%20room%203%20beds/family-3-beds.jpg"
@@ -1478,6 +1491,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -1558,9 +1574,9 @@
     </article>
 
     <!-- Phòng 9 -->
-    <article class="room-card">
+    <article class="room-card" data-room="room9">
 
-      <div class="room-image">
+      <div class="room-image" tabindex="0" role="button" data-i18n-label="viewDetails" aria-label="Xem chi tiết">
 
         <img
           src="images/Family%20room%204%20beds/PES08725.jpg"
@@ -1569,6 +1585,9 @@
           loading="lazy"
           decoding="async"
         >
+
+        <span class="room-view" data-i18n="viewDetails">Xem chi tiết</span>
+
 
       </div>
 
@@ -2092,6 +2111,100 @@
   </div>
 
 </footer>
+
+
+<!-- ================= POPUP CHI TIẾT PHÒNG ================= -->
+<div class="room-modal" id="roomModal" role="dialog" aria-modal="true" aria-labelledby="roomModalTitle" aria-hidden="true">
+
+  <button type="button" class="room-modal-close" id="roomModalClose" data-i18n-label="modalClose" aria-label="Đóng">
+    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+  </button>
+
+  <div class="room-modal-dialog">
+
+    <!-- Bên trái: bộ sưu tập ảnh -->
+    <div class="room-modal-gallery" id="roomModalGallery">
+
+      <div class="room-modal-stage">
+
+        <img id="roomModalImage" src="" alt="">
+
+        <button type="button" class="room-modal-arrow prev" id="roomModalPrev" data-i18n-label="modalPrev" aria-label="Ảnh trước">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <button type="button" class="room-modal-arrow next" id="roomModalNext" data-i18n-label="modalNext" aria-label="Ảnh tiếp theo">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <span class="room-modal-counter" id="roomModalCounter">1 / 1</span>
+
+      </div>
+
+      <div class="room-modal-thumbs" id="roomModalThumbs"></div>
+
+    </div>
+
+    <!-- Bên phải: thông tin phòng -->
+    <div class="room-modal-info">
+
+      <div class="room-modal-body">
+
+        <h3 id="roomModalTitle"></h3>
+
+        <p class="room-modal-desc" id="roomModalDesc"></p>
+
+        <ul class="room-modal-specs">
+
+          <li>
+            <i class="fa-solid fa-bed" aria-hidden="true"></i>
+            <div>
+              <small data-i18n="modalBedLabel">Loại giường</small>
+              <strong id="roomModalBed"></strong>
+            </div>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+            <div>
+              <small data-i18n="modalGuestsLabel">Sức chứa tối đa</small>
+              <strong id="roomModalGuests"></strong>
+            </div>
+          </li>
+
+        </ul>
+
+        <h4 data-i18n="modalAmenities">Tiện nghi cơ bản</h4>
+
+        <ul class="room-modal-amenities" id="roomModalAmenities"></ul>
+
+      </div>
+
+      <div class="room-modal-footer">
+
+        <div class="room-modal-price">
+          <strong id="roomModalPrice"></strong>
+          <small id="roomModalPer"></small>
+        </div>
+
+        <button type="button" class="room-modal-book" id="roomModalBook">
+          <i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+          <span data-i18n="modalBook">Liên hệ đặt phòng ngay</span>
+        </button>
+
+        <p class="room-modal-hint" data-i18n="modalBookHint">
+          Mở Messenger của fanpage VitaSea. Nội dung đặt phòng sẽ được sao chép sẵn để bạn dán vào tin nhắn.
+        </p>
+
+        <p class="room-modal-note" id="roomModalNote" role="status" aria-live="polite"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 <script src="js/script.js"></script>
