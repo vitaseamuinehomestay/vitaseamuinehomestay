@@ -860,7 +860,10 @@ const roomDetails = {
   room1: {
     images: [
       "images/Standard%20double%20room/PES08453.jpg"
-      /* , "images/Standard%20double%20room/ten-anh-khac.jpg" */
+      , "images/Standard%20double%20room/PES08402.jpg",
+      "images/Standard%20double%20room/PES08462.jpg",
+      "images/Standard%20double%20room/PES08463.jpg",
+      "images/Standard%20double%20room/PES08466.jpg"
     ],
     bed: 1, guests: 2, kitchen: "shared"
   },
