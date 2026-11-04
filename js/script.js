@@ -862,7 +862,6 @@ const roomDetails = {
       "images/Standard%20double%20room/PES08453.jpg",
       "images/Standard%20double%20room/PES08462.jpg",
       "images/Standard%20double%20room/PES08463.jpg",
-      "images/Standard%20double%20room/PES0846.jpg",
       "images/Standard%20double%20room/PES08463.jpg",
       "images/Standard%20double%20room/PES08402.jpg"
     ],
