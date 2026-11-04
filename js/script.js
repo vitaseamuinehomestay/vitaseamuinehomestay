@@ -871,7 +871,7 @@ const roomDetails = {
   room2: {
     images: [
       "images/Superior%20double%20room%20with%20kitchenette/PES08407.jpg",
-      "images/Superior%20double%20room%20with%20kitchenette/Toanbophong.jpg",
+      "images/Superior%20double%20room%20with%20kitchenette/Superior.jpg",
       "images/Superior%20double%20room%20with%20kitchenette/PES08399.1.jpg",
       "images/Superior%20double%20room%20with%20kitchenette/PES08410.jpg",
       "images/Superior%20double%20room%20with%20kitchenette/PES08412.jpg",
