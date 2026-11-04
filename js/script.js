@@ -859,67 +859,118 @@ const roomDetails = {
 
   room1: {
     images: [
-      "images/Standard%20double%20room/PES08453.jpg"
-      , "images/Standard%20double%20room/PES08402.jpg",
+      "images/Standard%20double%20room/PES08453.jpg",
       "images/Standard%20double%20room/PES08462.jpg",
       "images/Standard%20double%20room/PES08463.jpg",
-      "images/Standard%20double%20room/PES08466.jpg"
+      "images/Standard%20double%20room/PES0846.jpg",
+      "images/Standard%20double%20room/PES08463.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
     ],
     bed: 1, guests: 2, kitchen: "shared"
   },
 
   room2: {
     images: [
-      "images/Superior%20double%20room%20with%20kitchenette/PES08407.jpg"
+      "images/Superior%20double%20room%20with%20kitchenette/PES08407.jpg",
+      "images/Superior%20double%20room%20with%20kitchenette/Toanbophong.jpg",
+      "images/Superior%20double%20room%20with%20kitchenette/PES08399.1.jpg",
+      "images/Superior%20double%20room%20with%20kitchenette/PES08410.jpg",
+      "images/Superior%20double%20room%20with%20kitchenette/PES08412.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
+
     ],
     bed: 1, guests: 2, kitchen: "private"
   },
 
   room3: {
     images: [
-      "images/Double%20room%20with%20sofa/PES08578.jpg"
+      "images/Double%20room%20with%20sofa/PES08578.jpg",
+      "images/Double%20room%20with%20sofa/PES08582.jpg",
+      "images/Double%20room%20with%20sofa/PES08587.jpg",
+      "images/Double%20room%20with%20sofa/PES08590.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
+
     ],
     bed: 1, guests: 2, kitchen: "shared"
   },
 
   room4: {
     images: [
-      "images/Double%20room%20with%20living%20room/PES08594.jpg"
+      "images/Double%20room%20with%20living%20room/PES08594.jpg",
+      "images/Double%20room%20with%20living%20room/PES08513.jpg",
+      "images/Double%20room%20with%20living%20room/PES08599.jpg",
+      "images/Double%20room%20with%20living%20room/PES08602.jpg",
+      "images/Double%20room%20with%20living%20room/PES08605.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
     ],
-    bed: 1, guests: 2, kitchen: "shared"
+    bed: 1, guests: 2, kitchen: "private"
   },
 
   room5: {
     images: [
-      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08468.jpg"
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08468.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08476.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08482.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08490.1.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08497.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08507.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08505.jpg",
+
     ],
     bed: 2, guests: 4, kitchen: "private"
   },
 
   room6: {
     images: [
-      "images/Family%20room%20with%20sea%20view/PES08516.jpg"
+      "images/Family%20room%20with%20sea%20view/PES08516.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08524.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08531.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08535.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08542.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08550.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08558.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08565.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08568.jpg",
+      "images/Family%20room%20with%20sea%20view/PES08575.jpg",
+      "images/Family%20room%20with%20living%20room%20and%20kitchen/PES08505.jpg",
+      
     ],
     bed: 2, guests: 4, kitchen: "shared"
   },
 
   room7: {
     images: [
-      "images/Family%20house%20with%20pool%20view/PES08648.jpg"
+      "images/Family%20house%20with%20pool%20view/PES08648.jpg",
+      "images/Family%20house%20with%20pool%20view/PES08621.jpg",
+      "images/Family%20house%20with%20pool%20view/PES08632.jpg",
+      "images/Family%20house%20with%20pool%20view/PES08642.jpg",
+      "images/Family%20house%20with%20pool%20view/PES08644.jpg",
+      "images/Family%20house%20with%20pool%20view/PES08651.jpg",
+      "images/Family%20house%20with%20pool%20view/PES08672.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
     ],
     bed: 2, guests: 4, kitchen: "private"
   },
 
   room8: {
     images: [
-      "images/Family%20room%203%20beds/family-3-beds.jpg"
+      "images/Family%20room%203%20beds/family-3-beds.jpg",
+      "images/Family%20room%203%20beds/family-3-beds-1.jpg",
+      "images/Family%20room%203%20beds/family-3-beds-2.jpg",
+      "images/Family%20room%203%20beds/family-3-beds-3.jpg",
+      "images/Family%20room%203%20beds/family-3-beds-4.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
     ],
-    bed: 3, guests: 6, kitchen: "shared"
+    bed: 3, guests: 6, kitchen: "private"
   },
 
   room9: {
     images: [
-      "images/Family%20room%204%20beds/PES08725.jpg"
+      "images/Family%20room%204%20beds/PES08725.jpg",
+      "images/Family%20room%204%20beds/PES08720.jpg",
+      "images/Family%20room%204%20beds/PES08729.jpg",
+      "images/Family%20room%204%20beds/PES08736.jpg",
+      "images/Standard%20double%20room/PES08402.jpg"
     ],
     bed: 4, guests: 8, kitchen: "shared"
   }
