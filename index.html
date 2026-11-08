@@ -18,6 +18,7 @@
   <meta property="og:description" content="Khám phá không gian nghỉ dưỡng tuyệt vời tại Mũi Né với hồ bơi, sân BBQ, view biển. Đặt phòng ngay nhận ưu đãi giá tốt!">
   <meta property="og:image" content="https://vitaseamuinehomestay.com.vn/images/common/anh_bia.jpg">
   <meta property="og:url" content="https://vitaseamuinehomestay.com.vn/">
+  <meta property="og:image:alt" content="VitaSea Mui Ne Homestay &amp; Pool - homestay gần biển có hồ bơi tại Mũi Né">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Thẻ Canonical (tránh lặp lại nội dung) -->
@@ -49,6 +50,8 @@
       "https://facebook.com/vitaseamuinehomestay"
     ],
     "priceRange": "300,000 VND - 1,200,000 VND",
+    "numberOfRooms": 9,
+    "currenciesAccepted": "VND",
     "availableLanguage": [
       "vi",
       "en"
@@ -77,6 +80,21 @@
       {
         "@type": "LocationFeatureSpecification",
         "name": "Free Wi-Fi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Air conditioning",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Hot water",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Shared washing machine",
         "value": true
       }
     ],
@@ -280,10 +298,28 @@
           "@type": "Answer",
           "text": "Chọn ngày và số khách ở đầu trang rồi bấm Kiểm tra phòng trống để đặt trên Booking.com. Bạn cũng có thể liên hệ trực tiếp qua Facebook, Zalo, WhatsApp hoặc gọi +84 378 874 148."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Tôi có thể đặt phòng trực tiếp với VitaSea không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Có. Bạn có thể nhắn tin qua Messenger, Zalo, WhatsApp hoặc gọi +84 378 874 148 để được kiểm tra phòng trống và báo giá trực tiếp. Mỗi phòng trên trang đều có nút Liên hệ đặt phòng ngay."
+        }
       }
     ]
   }
   </script>
+
+  <!-- Google Analytics 4: bỏ dấu ghi chú và thay G-XXXXXXXXXX bằng mã đo lường của bạn
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 
   <!-- Tải trước ảnh hero để trang hiện nhanh hơn -->
   <link rel="preload" as="image" href="images/common/anh_bia.jpg" fetchpriority="high">
@@ -339,6 +375,10 @@
 
         <a href="#collections" data-i18n="navCollections">
           Khoảnh khắc
+        </a>
+
+        <a href="#location" data-i18n="navLocation">
+          Vị trí
         </a>
 
         <a href="#contact" data-i18n="navContact">
@@ -861,6 +901,9 @@
         </p>
 
 
+        <p class="room-features" data-i18n="roomFeaturesShared">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp chung</p>
+
+
         <div class="room-bottom">
 
           <div class="price">
@@ -953,6 +996,9 @@
         <p data-i18n="room2Description">
           Phòng tiêu chuẩn hai người với bếp nhỏ riêng trong phòng
         </p>
+
+
+        <p class="room-features" data-i18n="roomFeaturesPrivate">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp nhỏ riêng</p>
 
 
         <div class="room-bottom">
@@ -1049,6 +1095,9 @@
         </p>
 
 
+        <p class="room-features" data-i18n="roomFeaturesShared">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp chung</p>
+
+
         <div class="room-bottom">
 
           <div class="price">
@@ -1141,6 +1190,9 @@
         <p data-i18n="room4Description">
           Phòng đôi với phòng khách riêng cho hai người.
         </p>
+
+
+        <p class="room-features" data-i18n="roomFeaturesPrivate">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp nhỏ riêng</p>
 
 
         <div class="room-bottom">
@@ -1237,6 +1289,9 @@
         </p>
 
 
+        <p class="room-features" data-i18n="roomFeaturesPrivate">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp nhỏ riêng</p>
+
+
         <div class="room-bottom">
 
           <div class="price">
@@ -1329,6 +1384,9 @@
         <p data-i18n="room6Description">
           Phòng gia đình cho 4 người với tầm nhìn ra một phần biển.
         </p>
+
+
+        <p class="room-features" data-i18n="roomFeaturesShared">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp chung</p>
 
 
         <div class="room-bottom">
@@ -1425,6 +1483,9 @@
         </p>
 
 
+        <p class="room-features" data-i18n="roomFeaturesPrivate">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp nhỏ riêng</p>
+
+
         <div class="room-bottom">
 
           <div class="price">
@@ -1519,6 +1580,9 @@
         </p>
 
 
+        <p class="room-features" data-i18n="roomFeaturesPrivate">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp nhỏ riêng</p>
+
+
         <div class="room-bottom">
 
           <div class="price">
@@ -1611,6 +1675,9 @@
         <p data-i18n="room9Description">
           Phòng gia đình lớn với 4 giường đôi ở được 8 người và tầm nhìn hồ bơi.
         </p>
+
+
+        <p class="room-features" data-i18n="roomFeaturesShared">❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp chung</p>
 
 
         <div class="room-bottom">
@@ -1979,6 +2046,93 @@
       <p data-i18n="faq8A">Chọn ngày và số khách ở đầu trang rồi bấm Kiểm tra phòng trống để đặt trên Booking.com. Bạn cũng có thể liên hệ trực tiếp qua Facebook, Zalo, WhatsApp hoặc gọi +84 378 874 148.</p>
     </details>
 
+    <details class="faq-item">
+      <summary data-i18n="faq9Q">Tôi có thể đặt phòng trực tiếp với VitaSea không?</summary>
+      <p data-i18n="faq9A">Có. Bạn có thể nhắn tin qua Messenger, Zalo, WhatsApp hoặc gọi +84 378 874 148 để được kiểm tra phòng trống và báo giá trực tiếp. Mỗi phòng trên trang đều có nút Liên hệ đặt phòng ngay.</p>
+    </details>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LOCATION ================= -->
+
+<section class="location-section" id="location">
+
+  <div class="section-heading">
+
+    <p class="eyebrow" data-i18n="locationEyebrow">
+      VỊ TRÍ
+    </p>
+
+    <h2 data-i18n="locationTitle">
+      Homestay ở Mũi Né, gần biển
+    </h2>
+
+    <p data-i18n="locationDescription">
+      VitaSea nằm tại khu phố Hàm Tiến 1, Mũi Né, thuận tiện để ra biển và đi các điểm tham quan nổi tiếng của Phan Thiết – Mũi Né.
+    </p>
+
+  </div>
+
+  <div class="location-grid">
+
+    <div class="location-map">
+
+      <iframe
+        title="Bản đồ VitaSea Mui Ne Homestay &amp; Pool"
+        src="https://www.google.com/maps?q=149+Nguy%E1%BB%85n+%C4%90%C3%ACnh+Chi%E1%BB%83u+M%C5%A9i+N%C3%A9&amp;output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+
+    </div>
+
+    <div class="location-info">
+
+      <h3 data-i18n="locPlacesTitle">Điểm tham quan quanh Mũi Né</h3>
+
+      <ul class="location-places">
+        <li><span aria-hidden="true">📍</span> <span data-i18n="loc1">Đồi Cát Bay 7km</span></li>
+        <li><span aria-hidden="true">📍</span> <span data-i18n="loc2">Suối Tiên 5km</span></li>
+        <li><span aria-hidden="true">📍</span> <span data-i18n="loc5">Dốc Hoàng Hôn 7km</span></li>
+        <li><span aria-hidden="true">📍</span> <span data-i18n="loc3">Làng chài Mũi Né 7km</span></li>
+        <li><span aria-hidden="true">📍</span> <span data-i18n="loc4">Hòn Rơm 10km</span></li>
+        <li><span aria-hidden="true">📍</span> <span data-i18n="loc5">Bàu Trắng 25km</span></li>
+      </ul>
+
+      <p class="location-note" data-i18n="locJeepNote">
+        VitaSea hỗ trợ đặt Jeep tour và thuê xe máy để bạn tự do khám phá.
+      </p>
+
+      <div class="location-actions">
+
+        <a
+          class="location-btn"
+          href="https://maps.app.goo.gl/sZPmvFvbSwWkSoLE9"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="mapDirections"
+        >
+          Chỉ đường bằng Google Maps
+        </a>
+
+        <a
+          class="location-btn outline"
+          href="https://tinyurl.vn/ZNkW"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="reviewsCta"
+        >
+          Xem đánh giá của khách trên Booking.com
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
@@ -2111,6 +2265,45 @@
   </div>
 
 </footer>
+
+
+<!-- ================= NÚT LIÊN HỆ NỔI ================= -->
+<div class="float-contact">
+
+  <a
+    class="float-btn float-zalo"
+    href="https://zalo.me/+84378874148"
+    data-link="zalo"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-i18n-label="floatZalo"
+    aria-label="Nhắn Zalo"
+  >
+    <span aria-hidden="true">Zalo</span>
+  </a>
+
+  <a
+    class="float-btn float-messenger"
+    href="https://m.me/vitaseamuinehomestay"
+    data-link="messenger"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-i18n-label="floatMessenger"
+    aria-label="Nhắn Messenger"
+  >
+    <i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+  </a>
+
+  <a
+    class="float-btn float-call"
+    href="tel:+84378874148"
+    data-i18n-label="floatCall"
+    aria-label="Gọi điện"
+  >
+    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+  </a>
+
+</div>
 
 
 <!-- ================= POPUP CHI TIẾT PHÒNG ================= -->

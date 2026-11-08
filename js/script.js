@@ -201,7 +201,30 @@ const translations = {
     faq7Q: "VitaSea có hỗ trợ đưa đón sân bay và đặt vé xe khách không?",
     faq7A: "Có. VitaSea hỗ trợ đặt xe riêng đưa đón sân bay và đặt vé xe khách cho hành trình tiếp theo của bạn. Hãy liên hệ để được báo giá.",
     faq8Q: "Đặt phòng như thế nào?",
-    faq8A: "Chọn ngày và số khách ở đầu trang rồi bấm Kiểm tra phòng trống để đặt trên Booking.com. Bạn cũng có thể liên hệ trực tiếp qua Facebook, Zalo, WhatsApp hoặc gọi +84 378 874 148."
+    faq8A: "Chọn ngày và số khách ở đầu trang rồi bấm Kiểm tra phòng trống để đặt trên Booking.com. Bạn cũng có thể liên hệ trực tiếp qua Facebook, Zalo, WhatsApp hoặc gọi +84 378 874 148.",
+    faq9Q: "Tôi có thể đặt phòng trực tiếp với VitaSea không?",
+    faq9A: "Có. Bạn có thể nhắn tin qua Messenger, Zalo, WhatsApp hoặc gọi +84 378 874 148 để được kiểm tra phòng trống và báo giá trực tiếp. Mỗi phòng trên trang đều có nút Liên hệ đặt phòng ngay.",
+
+    navLocation: "Vị trí",
+    roomFeaturesShared: "❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp chung",
+    roomFeaturesPrivate: "❄️ Điều hòa · 🚿 Nước nóng · 📶 Wifi · 🏊 Hồ bơi chung · 🍳 Bếp nhỏ riêng",
+
+    locationEyebrow: "VỊ TRÍ",
+    locationTitle: "Homestay ở Mũi Né, gần biển",
+    locationDescription: "VitaSea nằm tại khu phố Hàm Tiến 1, Mũi Né, thuận tiện để ra biển và đi các điểm tham quan nổi tiếng của Phan Thiết – Mũi Né.",
+    locPlacesTitle: "Điểm tham quan quanh Mũi Né",
+    loc1: "Đồi Cát Bay",
+    loc2: "Suối Tiên",
+    loc3: "Làng chài Mũi Né",
+    loc4: "Hòn Rơm",
+    loc5: "Bàu Trắng",
+    locJeepNote: "VitaSea hỗ trợ đặt Jeep tour và thuê xe máy để bạn tự do khám phá.",
+    mapDirections: "Chỉ đường bằng Google Maps",
+    reviewsCta: "Xem đánh giá của khách trên Booking.com",
+
+    floatZalo: "Nhắn Zalo",
+    floatMessenger: "Nhắn Messenger",
+    floatCall: "Gọi điện",
 
   },
 
@@ -390,7 +413,30 @@ const translations = {
     faq7Q: "Do you help with airport transfers and bus tickets?",
     faq7A: "Yes. We can arrange a private car to and from the airport and book bus tickets for your next destination. Contact us for a quote.",
     faq8Q: "How do I book?",
-    faq8A: "Choose your dates and guests at the top of the page and press Check Availability to book on Booking.com. You can also contact us directly on Facebook, Zalo, WhatsApp or call +84 378 874 148."
+    faq8A: "Choose your dates and guests at the top of the page and press Check Availability to book on Booking.com. You can also contact us directly on Facebook, Zalo, WhatsApp or call +84 378 874 148.",
+    faq9Q: "Can I book directly with VitaSea?",
+    faq9A: "Yes. Message us on Messenger, Zalo, WhatsApp or call +84 378 874 148 and we will check availability and quote you directly. Every room on this page has a Contact us to book now button.",
+
+    navLocation: "Location",
+    roomFeaturesShared: "❄️ Air-con · 🚿 Hot water · 📶 Wifi · 🏊 Shared pool · 🍳 Shared kitchen",
+    roomFeaturesPrivate: "❄️ Air-con · 🚿 Hot water · 📶 Wifi · 🏊 Shared pool · 🍳 Private kitchenette",
+
+    locationEyebrow: "LOCATION",
+    locationTitle: "A homestay in Mui Ne, near the sea",
+    locationDescription: "VitaSea is in Ham Tien 1 ward, Mui Ne, a convenient base for the beach and the best-known sights of Phan Thiet and Mui Ne.",
+    locPlacesTitle: "Sights around Mui Ne",
+    loc1: "White Sand Dunes",
+    loc2: "Fairy Stream",
+    loc3: "Mui Ne Fishing Village",
+    loc4: "Hon Rom",
+    loc5: "Bau Trang (White Lake)",
+    locJeepNote: "We can arrange a Jeep tour and motorbike rental so you can explore at your own pace.",
+    mapDirections: "Get directions on Google Maps",
+    reviewsCta: "Read guest reviews on Booking.com",
+
+    floatZalo: "Message on Zalo",
+    floatMessenger: "Message on Messenger",
+    floatCall: "Call us",
 
   }
 
@@ -517,6 +563,44 @@ document
   .forEach(link => {
     link.href = WEBSITE_LINKS[link.dataset.link];
   });
+
+
+/* =========================================================
+   THEO DÕI SỰ KIỆN (Google Analytics 4)
+
+   Chỉ hoạt động khi bạn đã dán mã GA4 vào <head> của index.html
+   (có sẵn đoạn mã mẫu đang được ghi chú). Chưa cài GA4 thì không có gì xảy ra.
+   Giúp biết khách bấm Zalo, Messenger, gọi điện hay Kiểm tra phòng trống bao nhiêu lần.
+========================================================= */
+
+function trackEvent(name, params) {
+  try {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, params || {});
+    }
+  } catch (error) {
+    /* Bỏ qua lỗi theo dõi, không ảnh hưởng trang */
+  }
+}
+
+document.addEventListener("click", function (event) {
+
+  const linkEl = event.target.closest("[data-link]");
+
+  if (linkEl) {
+    trackEvent("contact_click", { method: linkEl.dataset.link });
+    return;
+  }
+
+  const anchor = event.target.closest("a[href^='tel:'], a[href^='mailto:']");
+
+  if (anchor) {
+    trackEvent("contact_click", {
+      method: anchor.getAttribute("href").startsWith("tel:") ? "phone" : "email"
+    });
+  }
+
+});
 
 
 /* =========================================================
@@ -820,6 +904,8 @@ function checkAvailability() {
     + "&no_rooms=1";
 
 
+  trackEvent("check_availability", { guests: guests });
+
   window.open(
     bookingURL,
     "_blank"
@@ -861,7 +947,6 @@ const roomDetails = {
     images: [
       "images/Standard%20double%20room/PES08453.jpg",
       "images/Standard%20double%20room/PES08462.jpg",
-      "images/Standard%20double%20room/PES08463.jpg",
       "images/Standard%20double%20room/PES08463.jpg",
       "images/Standard%20double%20room/PES08402.jpg"
     ],
@@ -1200,6 +1285,11 @@ function bookRoomViaMessenger() {
   window.open(WEBSITE_LINKS.messenger, "_blank", "noopener");
 
   note.textContent = t("modalCopied");
+
+  trackEvent("contact_click", {
+    method: "messenger_popup",
+    room: roomModalState.key
+  });
 
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {
